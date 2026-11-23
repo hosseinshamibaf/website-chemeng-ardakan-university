@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ماشین حساب مهندسی حرفه‌ای</title>
+
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="photo/لوگو انجمن.webp">
+</head>
+
+<body>
+<header class="header">
+        <div class="container">
+
+            <nav class="nav">
+
+                <!-- دکمه منوی موبایل -->
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="باز کردن منو"
+                    aria-controls="navMenu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+
+                <!-- لوگو و عنوان سایت -->
+                <a href="index.html"
+                  class="brand"
+                  aria-label="صفحه اصلی انجمن علمی شیمی">
+
+                    <img
+                        src="photo/لوگو انجمن.webp"
+                        alt="لوگوی انجمن علمی مهندسی شیمی"
+                    >
+
+                    <div class="brand-text">
+                        <strong>انجمن علمی مهندسی شیمی</strong>
+                        <span>دانشگاه اردکان</span>
+                    </div>
+
+                </a>
+
+
+                <!-- منوی اصلی -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">صفحه اصلی</a></li>
+                    <li><a href="magazine.html">نشریه</a></li>
+                    <li><a href="audio-magazine.html">نشریه صوتی</a></li>
+                    <li><a href="event.html">رویدادها</a></li>
+                    <li><a href="notium.html">نوتیوم</a></li>
+                    <li><a href="about-society.html">درباره انجمن</a></li>
+                    <li><a href="Exocaf - Copy.html">اگزوکاف</a></li>
+                </ul>
+
+
+                <!-- تغییر تم -->
+                <button id="theme-toggle">
+                    <img id="theme-icon" src="photo/moon.png" alt="تغییر حالت">
+                </button>
+
+            </nav>
+
+        </div>
+</header>
+<div class="calculator-app">
+
+    <!-- ================= HEADER ================= -->
+    <div class="calculator-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                Σ
+            </div>
+
+            <div>
+                <h1>ماشین حساب مهندسی</h1>
+
+                <p>
+                    Scientific • Engineering • Calculus • Matrix
+                </p>
+            </div>
+
+        </div>
+
+        <button id="historyBtn" class="header-btn">
+            تاریخچه
+        </button>
+
+    </div>
+
+
+    <!-- ================= DISPLAY ================= -->
+
+    <section class="display">
+
+        <div class="display-status">
+
+            <button id="angleMode">
+                DEG
+            </button>
+
+            <button id="formatMode">
+                NORM
+            </button>
+
+            <span id="memoryStatus">
+                M
+            </span>
+
+            <span>
+                ANS
+            </span>
+
+        </div>
+
+
+        <div id="expression" class="expression">
+            0
+        </div>
+
+        <div id="result" class="result">
+            0
+        </div>
+
+        <div id="error" class="error"></div>
+
+    </section>
+
+
+    <!-- ================= TABS ================= -->
+
+    <nav class="tabs">
+
+        <button class="tab active"
+                data-tab="scientific">
+            علمی
+        </button>
+
+        <button class="tab"
+                data-tab="calculus">
+            حساب دیفرانسیل
+        </button>
+
+        <button class="tab"
+                data-tab="statistics">
+            آمار
+        </button>
+
+        <button class="tab"
+                data-tab="matrix">
+            ماتریس
+        </button>
+
+        <button class="tab"
+                data-tab="programmer">
+            برنامه‌نویسی
+        </button>
+
+    </nav>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="calculator-content">
+
+
+        <!-- ================= SCIENTIFIC ================= -->
+
+        <section id="scientificPanel"
+                 class="panel active">
+
+            <div class="function-grid">
+
+                <button data-insert="sin(">
+                    sin
+                </button>
+
+                <button data-insert="cos(">
+                    cos
+                </button>
+
+                <button data-insert="tan(">
+                    tan
+                </button>
+
+                <button data-insert="asin(">
+                    sin⁻¹
+                </button>
+
+                <button data-insert="acos(">
+                    cos⁻¹
+                </button>
+
+                <button data-insert="atan(">
+                    tan⁻¹
+                </button>
+
+
+                <button data-insert="sinh(">
+                    sinh
+                </button>
+
+                <button data-insert="cosh(">
+                    cosh
+                </button>
+
+                <button data-insert="tanh(">
+                    tanh
+                </button>
+
+
+                <button data-insert="sqrt(">
+                    √
+                </button>
+
+                <button data-insert="cbrt(">
+                    ∛
+                </button>
+
+                <button data-insert="abs(">
+                    abs
+                </button>
+
+
+                <button data-insert="log(">
+                    log
+                </button>
+
+                <button data-insert="ln(">
+                    ln
+                </button>
+
+                <button data-insert="log2(">
+                    log₂
+                </button>
+
+
+                <button data-insert="exp(">
+                    eˣ
+                </button>
+
+                <button data-insert="10^(">
+                    10ˣ
+                </button>
+
+                <button data-insert="1/(">
+                    1/x
+                </button>
+
+
+                <button data-insert="π">
+                    π
+                </button>
+
+                <button data-insert="e">
+                    e
+                </button>
+
+                <button data-insert="φ">
+                    φ
+                </button>
+
+
+                <button data-insert="!">
+                    x!
+                </button>
+
+                <button data-insert="^2">
+                    x²
+                </button>
+
+                <button data-insert="^">
+                    xʸ
+                </button>
+
+
+                <button data-insert="mod(">
+                    mod
+                </button>
+
+                <button data-insert="gcd(">
+                    GCD
+                </button>
+
+                <button data-insert="lcm(">
+                    LCM
+                </button>
+
+
+                <button data-insert="nCr(">
+                    nCr
+                </button>
+
+                <button data-insert="nPr(">
+                    nPr
+                </button>
+
+                <button data-insert="ans">
+                    ANS
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALCULUS ================= -->
+
+        <section id="calculusPanel"
+                 class="panel">
+
+            <div class="info-box">
+
+                <strong>
+                    توابع حساب دیفرانسیل و انتگرال
+                </strong>
+
+                <span>
+                    مشتق:
+                    <code>
+                        deriv(x^3+2*x,2)
+                    </code>
+                </span>
+
+                <span>
+                    انتگرال:
+                    <code>
+                        integral(x^2,0,3)
+                    </code>
+                </span>
+
+                <span>
+                    حد:
+                    <code>
+                        limit(sin(x)/x,0)
+                    </code>
+                </span>
+
+                <span>
+                    حل معادله:
+                    <code>
+                        solve(x^2-5,2)
+                    </code>
+                </span>
+
+            </div>
+
+
+            <div class="function-grid">
+
+                <button data-insert="deriv(">
+                    d/dx
+                </button>
+
+                <button data-insert="integral(">
+                    ∫
+                </button>
+
+                <button data-insert="limit(">
+                    lim
+                </button>
+
+                <button data-insert="solve(">
+                    Solve
+                </button>
+
+                <button data-insert="sum(">
+                    Σ
+                </button>
+
+                <button data-insert="prod(">
+                    Π
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section id="statisticsPanel"
+                 class="panel">
+
+            <div class="info-box">
+
+                <strong>
+                    توابع آماری
+                </strong>
+
+                <span>
+                    مثال:
+                    <code>
+                        mean(10,12,15,20)
+                    </code>
+                </span>
+
+            </div>
+
+
+            <div class="function-grid">
+
+                <button data-insert="mean(">
+                    Mean
+                </button>
+
+                <button data-insert="median(">
+                    Median
+                </button>
+
+                <button data-insert="mode(">
+                    Mode
+                </button>
+
+                <button data-insert="variance(">
+                    Variance
+                </button>
+
+                <button data-insert="stdev(">
+                    Std Dev
+                </button>
+
+                <button data-insert="pstdev(">
+                    Pop Std
+                </button>
+
+                <button data-insert="min(">
+                    Min
+                </button>
+
+                <button data-insert="max(">
+                    Max
+                </button>
+
+                <button data-insert="sum(">
+                    Sum
+                </button>
+
+                <button data-insert="product(">
+                    Product
+                </button>
+
+                <button data-insert="percentile(">
+                    Percentile
+                </button>
+
+                <button data-insert="zscore(">
+                    Z-score
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MATRIX ================= -->
+
+        <section id="matrixPanel"
+                 class="panel">
+
+            <div class="matrix-inputs">
+
+                <div>
+
+                    <label>
+                        ماتریس A
+                    </label>
+
+                    <textarea id="matrixA">1,2;3,4</textarea>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        ماتریس B
+                    </label>
+
+                    <textarea id="matrixB">5,6;7,8</textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="matrix-buttons">
+
+                <button data-matrix="add">
+                    A + B
+                </button>
+
+                <button data-matrix="sub">
+                    A − B
+                </button>
+
+                <button data-matrix="mul">
+                    A × B
+                </button>
+
+                <button data-matrix="det">
+                    det(A)
+                </button>
+
+                <button data-matrix="inv">
+                    A⁻¹
+                </button>
+
+                <button data-matrix="transpose">
+                    Aᵀ
+                </button>
+
+                <button data-matrix="trace">
+                    trace(A)
+                </button>
+
+                <button data-matrix="rank">
+                    rank(A)
+                </button>
+
+            </div>
+
+
+            <pre id="matrixOutput">
+نتیجه ماتریس اینجا نمایش داده می‌شود.
+            </pre>
+
+        </section>
+
+
+        <!-- ================= PROGRAMMER ================= -->
+
+        <section id="programmerPanel"
+                 class="panel">
+
+            <div class="base-buttons">
+
+                <button data-base="2">
+                    BIN
+                </button>
+
+                <button data-base="8">
+                    OCT
+                </button>
+
+                <button data-base="10"
+                        class="selected">
+                    DEC
+                </button>
+
+                <button data-base="16">
+                    HEX
+                </button>
+
+            </div>
+
+
+            <div class="function-grid">
+
+                <button data-bit="and">
+                    AND
+                </button>
+
+                <button data-bit="or">
+                    OR
+                </button>
+
+                <button data-bit="xor">
+                    XOR
+                </button>
+
+                <button data-bit="not">
+                    NOT
+                </button>
+
+                <button data-bit="shl">
+                    SHIFT LEFT
+                </button>
+
+                <button data-bit="shr">
+                    SHIFT RIGHT
+                </button>
+
+            </div>
+
+
+            <div class="base-output">
+
+                <div>
+                    <span>BIN</span>
+                    <b id="binOut">0</b>
+                </div>
+
+                <div>
+                    <span>OCT</span>
+                    <b id="octOut">0</b>
+                </div>
+
+                <div>
+                    <span>DEC</span>
+                    <b id="decOut">0</b>
+                </div>
+
+                <div>
+                    <span>HEX</span>
+                    <b id="hexOut">0</b>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MEMORY ================= -->
+
+        <div class="memory-buttons">
+
+            <button data-memory="mc">
+                MC
+            </button>
+
+            <button data-memory="mr">
+                MR
+            </button>
+
+            <button data-memory="mplus">
+                M+
+            </button>
+
+            <button data-memory="mminus">
+                M−
+            </button>
+
+            <button data-memory="ms">
+                MS
+            </button>
+
+        </div>
+
+
+        <!-- ================= KEYPAD ================= -->
+
+        <section class="keypad">
+
+            <button class="danger"
+                    data-action="clear">
+                AC
+            </button>
+
+            <button class="secondary"
+                    data-action="delete">
+                DEL
+            </button>
+
+            <button data-insert="(">
+                (
+            </button>
+
+            <button data-insert=")">
+                )
+            </button>
+
+            <button class="operator"
+                    data-insert="%">
+                %
+            </button>
+
+
+            <button data-insert="7">
+                7
+            </button>
+
+            <button data-insert="8">
+                8
+            </button>
+
+            <button data-insert="9">
+                9
+            </button>
+
+            <button class="operator"
+                    data-insert="/">
+                ÷
+            </button>
+
+            <button data-insert=",">
+                ,
+            </button>
+
+
+            <button data-insert="4">
+                4
+            </button>
+
+            <button data-insert="5">
+                5
+            </button>
+
+            <button data-insert="6">
+                6
+            </button>
+
+            <button class="operator"
+                    data-insert="*">
+                ×
+            </button>
+
+            <button data-action="sign">
+                ±
+            </button>
+
+
+            <button data-insert="1">
+                1
+            </button>
+
+            <button data-insert="2">
+                2
+            </button>
+
+            <button data-insert="3">
+                3
+            </button>
+
+            <button class="operator"
+                    data-insert="-">
+                −
+            </button>
+
+            <button class="equal"
+                    data-action="calculate">
+                =
+            </button>
+
+
+            <button class="zero"
+                    data-insert="0">
+                0
+            </button>
+
+            <button data-insert=".">
+                .
+            </button>
+
+            <button class="operator"
+                    data-insert="+">
+                +
+            </button>
+
+            <button data-action="history">
+                Hist
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= HISTORY ================= -->
+
+    <aside id="historyPanel"
+           class="history-panel">
+
+        <div class="history-header">
+
+            <h2>
+                تاریخچه
+            </h2>
+
+            <button id="clearHistory">
+                پاک کردن
+            </button>
+
+        </div>
+
+        <div id="historyList"></div>
+
+    </aside>
+
+
+    <footer>
+
+        <span>
+            Engineering Calculator
+        </span>
+
+        <span>
+            Keyboard Supported
+        </span>
+
+    </footer>
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid-pro">
+      
+      <!-- ستون ۱: هویت انجمن -->
+      <div class="footer-col">
+        <a class="logo" href="#home" style="text-decoration: none;">
+          <span><img src="photo/لوگو انجمن.webp" alt=""></span>
+        </a>
+        <p class="footer-desc">
+          انجمن علمی مهندسی شیمی دانشگاه اردکان؛ مرجع تخصصی دانشجویان برای توسعه دانش فنی، پژوهش و مهارت‌های صنعتی
+        </p>
+        <div class="dock">
+           <a href="https://www.instagram.com/chemeng_ard?igsh=dTk4bmN6ODViMWFk"><div class="icon"><i class="fab fa-instagram"><img src="photo/Instagram.webp" alt="" style="width: 40px;" height="40px"></i></div></a>
+           <a href="https://t.me/chemeng_ard"><div class="icon"><i class="fab fa-instagram"><img src="photo/Telegram.webp" alt="" style="width: 40px;" height="40px"></i></div></a>
+          <a href=""><div class="icon"><i class="fab fa-instagram"><img src="photo/Youtube.webp" alt="" style="width: 40px;" height="40px"></i></div></a>
+          <a href=""><div class="icon"><i class="fab fa-instagram"><img src="photo/Linkedin (1).webp" alt="" style="width: 40px;" height="40px"></i></div></a>
+        </div>
+      </div>
+
+      <!-- ستون ۲: لینک‌های سریع -->
+      <div class="footer-col">
+        <h4 class="footer-title">دسترسی سریع</h4>
+        <ul class="footer-links">
+          <li><a href="#news">اخبار انجمن</a></li>
+          <li><a href="event.html">رویدادها</a></li>
+          <li><a href="magazine.html">نشریه علمی</a></li>
+          <li><a href="about-society.html">اگزوکاف</a></li>
+        </ul>
+      </div>
+
+      <!-- ستون ۳: تماس -->
+      <div class="footer-col">
+        <h4 class="footer-title">ارتباط</h4>
+        <div class="footer-contact">
+          <p>ساختمان نور ، دفتر انجمن های علمی</p>
+          <a href="mailto:chemeng.ard.uni@gmail.com">ایمیل:chemeng.ard.uni@gmail.com</a>
+          <a href="tel:+989932540083">تماس:09932540083</a>
+        </div>
+      </div>
+
+      <!-- ستون ۴: نقشه -->
+      <div class="footer-col">
+        <h4 class="footer-title">موقعیت</h4>
+        <div class="card map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6745.331393596361!2d53.99472273342912!3d32.2939648323962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa42c9f40da3837%3A0xb48e002cca7dd604!2z2K_Yp9mG2LTar9in2Ycg2KfYsdiv2qnYp9mG!5e0!3m2!1sfa!2s!4v1789821347348!5m2!1sfa!2s" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- کپی‌رایت -->
+    <div class="footer-bottom">
+      <p>© تمامی حقوق متعلق به انجمن علمی مهندسی شیمی دانشگاه اردکان می باشد.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/calculator.js"></script>
+<script src="js/next .js"></script>
+
+</body>
+</html>

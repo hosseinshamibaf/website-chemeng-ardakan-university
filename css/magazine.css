@@ -1,0 +1,604 @@
+
+/* Magazine Specific Styles - Using your Design System Variables */
+
+.magazine-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 0.9fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .magazine-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* استایل مقاله اصلی */
+.main-article h2 {
+    color: var(--primary2);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.main-article p {
+    color: var(--muted);
+    line-height: 2;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.info-box {
+    background: rgba(79, 140, 255, 0.05);
+    border-right: 4px solid var(--primary);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.info-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* لیست های سایدبار */
+.meta-list {
+    list-style: none;
+    padding: 0;
+}
+
+.meta-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.meta-list li strong {
+    color: var(--primary2);
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.team-item {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.cta-mini {
+    margin-top: 20px;
+}
+
+/* هماهنگی با کلاس active در منو */
+.nav a.active {
+    color: var(--primary2);
+}
+.nav a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    margin-top: 5px;
+}
+/* Archive Section Styles - Image Focus */
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* دقیقا ۴ ستون */
+    gap: 20px;
+    align-items: stretch;
+}
+
+.issue-cover {
+    width: 100%;
+    height: 350px; /* قبلا 320 بود، کوچکتر شد */
+    overflow: hidden;
+    border-radius: calc(var(--radius) - 8px);
+    margin-bottom: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.issue-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.issue-card:hover .issue-cover img {
+    transform: scale(1.05); /* زوم ملایم‌تر برای کارت کوچک‌تر */
+}
+
+.issue-card {
+    text-align: center;
+    padding: 16px;           /* از 20 یا 30 کمتر شد */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.issue-card h4 {
+    margin: 6px 0 4px;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.issue-card p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+/* Audience redesigned layout */
+.audience-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;  /* چپ بزرگ‌تر، راست کوچکتر */
+    gap: 40px;
+    align-items: center;
+}
+/* =========================================
+   AUDIENCE SECTION
+========================================= */
+
+.audience-layout {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.audience-text {
+    min-width: 0;
+}
+
+.audience-title {
+    margin: 15px 0;
+
+    font-family: Bahman, sans-serif;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1.4;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   SECTION TAG
+========================================= */
+
+.section-tag {
+    display: inline-block;
+
+    max-width: 100%;
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    white-space: nowrap;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.audience-text p {
+    line-height: 2;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   COVER
+========================================= */
+
+.audience-cover {
+    width: 100%;
+    max-width: 240px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+}
+
+.audience-cover img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+.audience-download {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+
+    margin: 20px auto 0;
+
+    text-align: center;
+}
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .audience-layout {
+        grid-template-columns: minmax(0, 1fr) 200px;
+
+        gap: 30px;
+    }
+
+    .audience-cover {
+        max-width: 200px;
+    }
+
+    .section-tag {
+        font-size: 14px;
+        padding: 9px 15px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .audience-layout {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 30px;
+    }
+
+
+    /* متن */
+
+    .audience-text {
+        width: 100%;
+
+        text-align: right;
+    }
+
+
+    /* عنوان */
+
+    .audience-title {
+        font-size: clamp(27px, 8vw, 36px);
+
+        line-height: 1.5;
+
+        margin: 15px 0;
+    }
+
+
+    /* عنوان بخش */
+
+    .section-tag {
+        display: inline-block;
+
+        font-size: clamp(12px, 3.5vw, 15px);
+
+        white-space: nowrap;
+
+        max-width: 100%;
+    }
+
+
+    /* توضیحات */
+
+    .audience-text p {
+        font-size: 15px;
+
+        line-height: 2;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* لیست */
+
+    .audience-list {
+        width: 100%;
+
+        padding-right: 20px;
+    }
+
+    .audience-list li {
+        margin-bottom: 10px;
+
+        line-height: 1.8;
+    }
+
+
+    /* جلد */
+
+    .audience-cover {
+        width: min(210px, 60vw);
+
+        max-width: 210px;
+
+        margin: 0 auto;
+    }
+
+
+    .audience-cover img {
+        width: 100%;
+
+        height: auto;
+
+        display: block;
+    }
+
+
+    /* دکمه */
+
+    .audience-text .btn {
+        width: 100%;
+
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .audience-layout {
+        gap: 25px;
+    }
+
+    .section-tag {
+        font-size: 12px;
+
+        padding: 8px 14px;
+    }
+
+    .audience-title {
+        font-size: 27px;
+
+        line-height: 1.6;
+    }
+
+    .audience-text p {
+        font-size: 14px;
+    }
+
+    .audience-cover {
+        width: min(190px, 58vw);
+    }
+
+}
+@media (max-width: 768px) {
+
+    .audience-download {
+        width: min(100%, 360px);
+
+        margin: 0 auto;
+
+        order: 3;
+    }
+
+}
+
+/* متن سمت چپ */
+.audience-text h2 {
+    margin: 12px 0 14px;
+    color: var(--text);
+}
+
+.audience-text p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.audience-list {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+}
+
+.audience-list li {
+    margin-bottom: 10px;
+    color: var(--text);
+    padding-right: 18px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.audience-list li::before {
+    position: absolute;
+    right: 0;
+    font-size: 1.3rem;
+    line-height: 0;
+}
+
+/* جلد سمت راست */
+.audience-cover {
+    width: 115%;
+    height: 400px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.audience-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .45s ease;
+}
+
+.audience-cover:hover img {
+    transform: scale(1.07);
+}
+
+/* ریسپانسیو */
+@media (max-width:900p) {
+    .audience-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .audience-cover {
+        height: 340px;
+    }
+}
+/* باکس اعضای تحریریه در سایدبار */
+.team-sidebar-card {
+    padding: 22px;
+    background: var(--card); /* استفاده از رنگ کارت اصلی سایت شما */
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.team-sidebar-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(79, 140, 255, 0.3); /* هایلایت ملایم با رنگ اصلی شما */
+}
+
+.card-header-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header-mini h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.team-list-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.team-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+
+.team-member .role {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.team-member .name {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* هماهنگی با طرح کلی */
+.sidebar-side {
+    display: flex;
+    flex-direction: column;
+}
+ body{
+    font-family:"Vazirmatn",sans-serif;
+}
+
+/* کادر جلد نشریه */
+.archive-grid .issue-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    overflow: hidden;
+    border-radius: 16px;
+
+    padding: 0;
+}
+
+
+/* تصویر جلد */
+.archive-grid .issue-cover img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 600px) {
+
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .archive-grid .issue-cover {
+        aspect-ratio: 2 / 3;
+    }
+
+}

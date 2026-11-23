@@ -1,0 +1,1144 @@
+/* =========================================
+   FONTS
+========================================= */
+
+@font-face {
+    font-family: "Vazir";
+    src: url("fonts/Vazir.woff2") format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bahman";
+    src: url("fonts/Bahman.woff2") format("woff2");
+    font-weight: normal;
+}
+
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+
+    --navy: #07111f;
+
+    --navy-light: #0b1b2e;
+
+    --card: rgba(7, 17, 31, 0.78);
+
+    --blue: #4db8ff;
+
+    --blue-light: #72caff;
+
+    --blue-soft: rgba(77, 184, 255, 0.12);
+
+    --text: #f5f9ff;
+
+    --text-muted: #9eafc1;
+
+    --border: rgba(114, 202, 255, 0.16);
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(77, 184, 255, 0.07),
+            transparent 35%
+        ),
+        var(--navy);
+
+    color: var(--text);
+
+    font-family: "Vazir", Tahoma, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Grid */
+
+.grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.23;
+
+    background-image:
+
+        linear-gradient(
+            rgba(114, 202, 255, 0.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(114, 202, 255, 0.045) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
+
+
+/* Glow */
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.25;
+}
+
+
+.glow-1 {
+
+    width: 380px;
+    height: 380px;
+
+    background: #168bd1;
+
+    top: -170px;
+    right: -100px;
+}
+
+
+.glow-2 {
+
+    width: 320px;
+    height: 320px;
+
+    background: #1450a0;
+
+    bottom: -170px;
+    left: -100px;
+}
+
+
+/* Floating Elements */
+
+.floating-shape {
+
+    position: absolute;
+
+    display: block;
+
+    border: 1px solid rgba(114, 202, 255, 0.13);
+
+    transform: rotate(45deg);
+
+    animation: floatShape 8s ease-in-out infinite;
+}
+
+
+.shape-1 {
+
+    width: 90px;
+    height: 90px;
+
+    top: 18%;
+    left: 12%;
+}
+
+
+.shape-2 {
+
+    width: 55px;
+    height: 55px;
+
+    top: 67%;
+    right: 13%;
+
+    animation-delay: 2s;
+}
+
+
+.shape-3 {
+
+    width: 30px;
+    height: 30px;
+
+    top: 28%;
+    right: 20%;
+
+    border-color: rgba(77, 184, 255, 0.2);
+
+    animation-delay: 4s;
+}
+
+
+@keyframes floatShape {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(45deg)
+            translateY(0);
+
+        opacity: 0.5;
+    }
+
+    50% {
+
+        transform:
+            rotate(65deg)
+            translateY(-18px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.success-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.success-card {
+
+    position: relative;
+
+    width: min(650px, 100%);
+
+    padding: 55px 55px 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 30, 49, 0.88),
+            rgba(5, 15, 28, 0.92)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(18px);
+
+    overflow: hidden;
+
+    animation: cardEnter 0.8s ease both;
+}
+
+
+@keyframes cardEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* Top blue line */
+
+.top-line {
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 150px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px rgba(77, 184, 255, 0.7);
+}
+
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+
+.success-icon {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+
+.icon-circle {
+
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(77, 184, 255, 0.18),
+            rgba(77, 184, 255, 0.03) 65%
+        );
+
+    border: 1px solid rgba(77, 184, 255, 0.25);
+
+    box-shadow:
+        0 0 0 10px rgba(77, 184, 255, 0.025),
+        0 0 45px rgba(77, 184, 255, 0.15);
+
+    animation: iconPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0 10px rgba(77, 184, 255, 0.025),
+            0 0 45px rgba(77, 184, 255, 0.15);
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 0 15px rgba(77, 184, 255, 0.015),
+            0 0 65px rgba(77, 184, 255, 0.25);
+    }
+}
+
+
+.check-icon {
+
+    width: 62px;
+    height: 62px;
+}
+
+
+.circle-path {
+
+    stroke: rgba(114, 202, 255, 0.3);
+
+    stroke-width: 1.5;
+
+    stroke-dasharray: 151;
+
+    stroke-dashoffset: 151;
+
+    animation:
+        drawCircle 0.8s ease 0.2s forwards;
+}
+
+
+.check-path {
+
+    stroke: var(--blue-light);
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    stroke-dasharray: 35;
+
+    stroke-dashoffset: 35;
+
+    animation:
+        drawCheck 0.55s ease 0.8s forwards;
+}
+
+
+@keyframes drawCircle {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes drawCheck {
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: var(--blue-soft);
+
+    border: 1px solid rgba(77, 184, 255, 0.12);
+
+    color: var(--blue-light);
+
+    font-size: 13px;
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--blue-light);
+
+    box-shadow:
+        0 0 10px var(--blue-light);
+
+    animation: dotPulse 1.8s infinite;
+}
+
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+h1 {
+
+    font-family: "Bahman", "Vazir", sans-serif;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    font-weight: normal;
+
+    line-height: 1.5;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+}
+
+
+h1 span {
+
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 25px rgba(77, 184, 255, 0.25);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+
+    max-width: 480px;
+
+    margin: 0 auto 28px;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    line-height: 2;
+
+}
+
+
+/* =========================================
+   INFO BOX
+========================================= */
+
+.info-box {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    text-align: right;
+
+    padding: 19px;
+
+    margin-bottom: 28px;
+
+    background:
+        rgba(77, 184, 255, 0.045);
+
+    border: 1px solid rgba(77, 184, 255, 0.1);
+
+    border-radius: 16px;
+}
+
+
+.info-icon {
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(77, 184, 255, 0.1);
+
+    color: var(--blue-light);
+}
+
+
+.info-icon svg {
+
+    width: 21px;
+    height: 21px;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+}
+
+
+.info-text h3 {
+
+    font-family: "Bahman", "Vazir", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+
+.info-text p {
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 205px;
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #48b8ff,
+            #2498dc
+        );
+
+    color: #03101c;
+
+    text-decoration: none;
+
+    font-family: "Vazir", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(77, 184, 255, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.primary-btn svg {
+
+    width: 18px;
+    height: 18px;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.primary-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 35px rgba(77, 184, 255, 0.3);
+}
+
+
+.primary-btn:hover svg {
+
+    transform: translateX(-4px);
+}
+
+
+.secondary-btn {
+
+    min-width: 170px;
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    border: 1px solid rgba(114, 202, 255, 0.16);
+
+    color: var(--text-muted);
+
+    font-family: "Vazir", sans-serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.secondary-btn:hover {
+
+    color: var(--blue-light);
+
+    border-color:
+        rgba(114, 202, 255, 0.35);
+
+    background:
+        rgba(77, 184, 255, 0.04);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.card-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    color: #63788d;
+
+    font-size: 10px;
+}
+
+
+.footer-line {
+
+    width: 45px;
+
+    height: 1px;
+
+    background:
+        rgba(114, 202, 255, 0.12);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .success-container {
+
+        padding: 25px 15px;
+    }
+
+
+    .success-card {
+
+        padding: 42px 22px 28px;
+
+        border-radius: 22px;
+    }
+
+
+    .icon-circle {
+
+        width: 90px;
+        height: 90px;
+    }
+
+
+    h1 {
+
+        font-size: 38px;
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+        line-height: 2;
+    }
+
+
+    .info-box {
+
+        text-align: right;
+
+        padding: 15px;
+
+        gap: 11px;
+    }
+
+
+    .actions {
+
+        flex-direction: column;
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+    }
+
+
+    .floating-shape {
+
+        display: none;
+    }
+
+}
+
+/* =========================================
+   LIGHT MODE ONLY
+   Dark Mode دست نخورده باقی می‌ماند
+========================================= */
+
+body.light-mode {
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(77, 184, 255, 0.10),
+            transparent 40%
+        ),
+        #eef3f9;
+
+    color: #0f172a;
+}
+
+
+/* =========================================
+   LIGHT MODE - BACKGROUND
+========================================= */
+
+body.light-mode .grid {
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(15, 23, 42, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.04) 1px,
+            transparent 1px
+        );
+}
+
+body.light-mode .glow {
+    opacity: 0.12;
+}
+
+body.light-mode .glow-1 {
+    background: #4da3e8;
+}
+
+body.light-mode .glow-2 {
+    background: #638ed0;
+}
+
+body.light-mode .floating-shape {
+    border-color: rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   LIGHT MODE - CARD
+========================================= */
+
+body.light-mode .success-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #eef4fa 100%
+        );
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* خط بالای کارت */
+
+body.light-mode .top-line {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #299fe3,
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px rgba(41, 159, 227, 0.35);
+}
+
+
+/* =========================================
+   LIGHT MODE - ICON
+========================================= */
+
+body.light-mode .icon-circle {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(77, 184, 255, 0.14),
+            rgba(77, 184, 255, 0.02) 65%
+        );
+
+    border-color: rgba(37, 145, 210, 0.28);
+
+    box-shadow:
+        0 0 0 10px rgba(77, 184, 255, 0.035),
+        0 0 45px rgba(77, 184, 255, 0.12);
+}
+
+
+/* =========================================
+   LIGHT MODE - STATUS
+========================================= */
+
+body.light-mode .status-label {
+
+    background: rgba(37, 145, 210, 0.08);
+
+    border-color: rgba(37, 145, 210, 0.15);
+
+    color: #1687c5;
+}
+
+body.light-mode .status-dot {
+
+    background: #299fe3;
+
+    box-shadow:
+        0 0 10px rgba(41, 159, 227, 0.5);
+}
+
+
+/* =========================================
+   LIGHT MODE - TITLE
+========================================= */
+
+body.light-mode h1 {
+    color: #0f172a;
+}
+
+body.light-mode h1 span {
+
+    color: #278ed2;
+
+    text-shadow:
+        0 0 20px rgba(39, 142, 210, 0.15);
+}
+
+
+/* =========================================
+   LIGHT MODE - DESCRIPTION
+========================================= */
+
+body.light-mode .description {
+    color: #526274;
+}
+
+
+/* =========================================
+   LIGHT MODE - INFO BOX
+========================================= */
+
+body.light-mode .info-box {
+
+    background:
+        rgba(37, 145, 210, 0.055);
+
+    border-color:
+        rgba(37, 145, 210, 0.14);
+}
+
+body.light-mode .info-icon {
+
+    background:
+        rgba(37, 145, 210, 0.10);
+
+    color: #168dcc;
+}
+
+body.light-mode .info-text h3 {
+    color: #172033;
+}
+
+body.light-mode .info-text p {
+    color: #58697b;
+}
+
+
+/* =========================================
+   LIGHT MODE - BUTTONS
+========================================= */
+
+body.light-mode .primary-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #42b5ed,
+            #2399d8
+        );
+
+    color: #06233a;
+
+    box-shadow:
+        0 8px 25px rgba(37, 145, 210, 0.18);
+}
+
+body.light-mode .primary-btn:hover {
+
+    box-shadow:
+        0 13px 35px rgba(37, 145, 210, 0.28);
+}
+
+
+body.light-mode .secondary-btn {
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-color:
+        rgba(37, 99, 235, 0.16);
+
+    color: #526274;
+}
+
+body.light-mode .secondary-btn:hover {
+
+    color: #168dcc;
+
+    border-color:
+        rgba(37, 145, 210, 0.35);
+
+    background:
+        rgba(37, 145, 210, 0.06);
+}
+
+
+/* =========================================
+   LIGHT MODE - FOOTER
+========================================= */
+
+body.light-mode .card-footer {
+    color: #718096;
+}
+
+body.light-mode .footer-line {
+    background:
+        rgba(37, 99, 235, 0.13);
+}
+

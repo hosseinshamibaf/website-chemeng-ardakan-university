@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پیش‌ثبت‌نام دوره</title>
+
+    <link rel="stylesheet" href="css/form sbtenam.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="photo/لوگو انجمن.webp">
+</head>
+
+<body>
+
+<section class="pre-register">
+
+    <div class="pre-hero">
+
+        <h1 style="font-family: bahman; color: dodgerblue; font-size: 50px;">
+            پیش‌ثبت‌نام دوره تخصصی
+        </h1>
+
+        <p>
+            برای حضور در دوره تخصصی انجمن، فرم زیر را تکمیل کنید.
+            پس از بررسی اطلاعات، زمان شروع دوره و مراحل بعدی برای شما ارسال خواهد شد.
+        </p>
+
+    </div>
+
+
+    <div class="pre-form-box">
+
+
+
+        <form
+    class="pre-form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    >
+
+    <input
+        type="hidden"
+        name="access_key"
+        value="75bc69e0-bb25-4ad4-adcc-fa5e12dd4693"
+    >
+
+    <input
+        type="hidden"
+        name="subject"
+        value="پیش‌ثبت‌نام جدید دوره مهندسی شیمی"
+    >
+    <input
+        type="hidden"
+        name="redirect"
+        value="http://127.0.0.1:5500/success.html"
+    >
+
+    <!-- بقیه فیلدهای فرم -->
+            <div class="form-grid">
+
+
+                <!-- نام -->
+
+                <div class="field">
+
+                    <label for="first-name">
+                        نام
+                    </label>
+
+                    <input
+                        id="first-name"
+                        type="text"
+                        name="first_name"
+                        required
+                        placeholder="علی"
+                    >
+
+                </div>
+
+
+                <!-- نام خانوادگی -->
+
+                <div class="field">
+
+                    <label for="last-name">
+                        نام خانوادگی
+                    </label>
+
+                    <input
+                        id="last-name"
+                        type="text"
+                        name="last_name"
+                        required
+                        placeholder="رضایی"
+                    >
+
+                </div>
+
+
+                <!-- نام پدر -->
+
+                <div class="field">
+
+                    <label for="father-name">
+                        نام پدر
+                    </label>
+
+                    <input
+                        id="father-name"
+                        type="text"
+                        name="father_name"
+                        required
+                        placeholder="محمد"
+                    >
+
+                </div>
+
+
+                <!-- محل تولد -->
+
+                <div class="field">
+
+                    <label for="birth-place">
+                        محل تولد
+                    </label>
+
+                    <input
+                        id="birth-place"
+                        type="text"
+                        name="birth_place"
+                        required
+                        placeholder="یزد"
+                    >
+
+                </div>
+
+
+                <!-- تاریخ تولد -->
+
+                <div class="field">
+
+                    <label for="birth-date">
+                        تاریخ تولد
+                    </label>
+
+                    <input
+                        id="birth-date"
+                        type="date"
+                        name="birth_date"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- کد ملی -->
+
+                <div class="field">
+
+                    <label for="national-id">
+                        کد ملی
+                    </label>
+
+                    <input
+                        id="national-id"
+                        type="text"
+                        name="national_id"
+                        required
+                        maxlength="10"
+                        inputmode="numeric"
+                        placeholder="4431835021"
+                    >
+
+                </div>
+
+
+                <!-- شماره دانشجویی -->
+
+                <div class="field">
+
+                    <label for="student-id">
+                        شماره دانشجویی
+                    </label>
+
+                    <input
+                        id="student-id"
+                        type="text"
+                        name="student_id"
+                        maxlength="11"
+                        inputmode="numeric"
+                        placeholder="40518163111"
+                    >
+
+                </div>
+
+
+                <!-- رشته تحصیلی -->
+
+                <div class="field">
+
+                    <label for="field-of-study">
+                        رشته تحصیلی
+                    </label>
+
+                    <input
+                        id="field-of-study"
+                        type="text"
+                        name="field_of_study"
+                        placeholder="مهندسی شیمی"
+                    >
+
+                </div>
+
+
+                <!-- دانشگاه -->
+
+                <div class="field">
+
+                    <label for="university">
+                        دانشگاه محل تحصیل
+                    </label>
+
+                    <input
+                        id="university"
+                        type="text"
+                        name="university"
+                        placeholder="دانشگاه اردکان"
+                    >
+
+                </div>
+
+
+                <!-- سال ورود -->
+
+                <div
+                    class="field"
+                    style="text-align: right;"
+                >
+
+                    <label for="entry-year">
+                        سال ورود
+                    </label>
+
+                    <input
+                        id="entry-year"
+                        type="tel"
+                        name="entry_year"
+                        required
+                        maxlength="4"
+                        inputmode="numeric"
+                        placeholder="1405"
+                    >
+
+                </div>
+
+
+                <!-- ایمیل -->
+
+                <div class="field">
+
+                    <label for="email">
+                        ایمیل
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="you@uni.ac.ir"
+                    >
+
+                </div>
+
+
+                <!-- شماره تلفن -->
+
+                <div
+                    class="field"
+                    style="text-align: right;"
+                >
+
+                    <label for="phone">
+                        شماره تلفن
+                    </label>
+
+                    <input
+                        id="phone"
+                        type="tel"
+                        name="phone"
+                        required
+                        inputmode="tel"
+                        placeholder="09136822021"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- قوانین -->
+
+            <div class="terms">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="terms_accepted"
+                        value="yes"
+                        required
+                    >
+
+                    من قوانین و شرایط شرکت در دوره را می‌پذیرم
+
+                </label>
+
+            </div>
+
+
+            <!-- دکمه ارسال -->
+
+            <div class="form-submit-box">
+
+                <div class="form-submit-text">
+
+                    <h3>
+                        آماده ثبت اطلاعات هستید؟
+                    </h3>
+
+                    <p>
+                        پس از تکمیل فرم و تایید قوانین،
+                        درخواست پیش‌ثبت‌نام شما برای بررسی ارسال می‌شود.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="submit-btn"
+                    type="submit"
+                >
+
+                    <span style="font-family: vazir;">
+                        تکمیل پیش ثبت نام
+                    </span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<script src="js/next .js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        کتابخانه فرمول مهندسی شیمی
+    </title>
+
+
+    <!-- Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/Formula Library.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
+    <link rel="icon" type="image/png" href="photo/لوگو انجمن.webp">
+
+
+    <!-- ==================================================
+         MATHJAX CONFIG
+    ================================================== -->
+
+    <script>
+
+        window.MathJax = {
+
+            tex: {
+
+                inlineMath: [
+                    ['\\(', '\\)']
+                ],
+
+                displayMath: [
+                    ['\\[', '\\]']
+                ],
+
+                processEscapes: true,
+
+                processEnvironments: true
+
+            },
+
+            svg: {
+
+                fontCache: 'global'
+
+            },
+
+            options: {
+
+                skipHtmlTags: [
+                    'script',
+                    'noscript',
+                    'style',
+                    'textarea',
+                    'pre',
+                    'code'
+                ]
+
+            }
+
+        };
+
+    </script>
+
+
+    <!-- MathJax -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        async>
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="nav">
+
+
+                <!-- Mobile Menu -->
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="باز کردن منو"
+                    aria-controls="navMenu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <!-- Brand -->
+
+                <a
+                    href="index.html"
+                    class="brand"
+                    aria-label="صفحه اصلی انجمن علمی مهندسی شیمی"
+                >
+
+                    <img
+                        src="photo/لوگو انجمن.webp"
+                        alt="لوگوی انجمن علمی مهندسی شیمی"
+                    >
+
+                    <div class="brand-text">
+
+                        <strong>
+                            انجمن علمی مهندسی شیمی
+                        </strong>
+
+                        <span>
+                            دانشگاه اردکان
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Navigation -->
+
+                <ul
+                    class="nav-menu"
+                    id="navMenu"
+                >
+
+                    <li>
+                        <a
+                            href="index.html"
+                            class="active"
+                        >
+                            صفحه اصلی
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="magazine.html">
+                            نشریه
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audio-magazine.html">
+                            نشریه صوتی
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="event.html">
+                            رویدادها
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="notium.html">
+                            نوتیوم
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about-society.html">
+                            درباره انجمن
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Exocaf - Copy.html">
+                            اگزوکاف
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Theme -->
+
+                <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="تغییر حالت نمایش"
+                >
+
+                    <img
+                        id="theme-icon"
+                        src="photo/moon.png"
+                        alt="تغییر حالت"
+                    >
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="container-1">
+
+
+        <!-- ==================================================
+             HERO
+        ================================================== -->
+
+        <header class="hero">
+
+
+            <div class="hero-logo">
+                Σ
+            </div>
+
+
+            <div class="hero-text">
+
+                <span>
+                    CHEMICAL ENGINEERING
+                </span>
+
+                <h1>
+                    کتابخانه فرمول‌های مهندسی شیمی
+                </h1>
+
+                <p>
+                    دسترسی سریع به فرمول‌ها، روابط مهم و کاربردهای
+                    دروس مهندسی شیمی
+                </p>
+
+            </div>
+
+
+            <div class="statistics">
+
+
+                <div class="stat">
+
+                    <strong id="courseCount">
+                        0
+                    </strong>
+
+                    <small>
+                        درس
+                    </small>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong id="formulaCount">
+                        0
+                    </strong>
+
+                    <small>
+                        فرمول
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             COURSE SEARCH
+        ================================================== -->
+
+        <section class="toolbar">
+
+
+            <div class="search-box">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    id="courseSearch"
+                    placeholder="جستجوی درس..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <p>
+                یک درس را انتخاب کنید تا فرمول‌های آن نمایش داده شود.
+            </p>
+
+
+        </section>
+
+
+        <!-- ==================================================
+             COURSES
+        ================================================== -->
+
+        <section id="coursesSection">
+
+            <div
+                id="courses"
+                class="courses-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FORMULAS
+        ================================================== -->
+
+        <section
+            id="formulaSection"
+            class="hidden"
+        >
+
+
+            <!-- Back -->
+
+            <button
+                id="backButton"
+                class="back-button"
+                type="button"
+            >
+
+                ←
+                بازگشت به کتابخانه
+
+            </button>
+
+
+            <!-- Course Header -->
+
+            <div class="course-header">
+
+
+                <div class="course-title">
+
+
+                    <div
+                        id="courseIcon"
+                        class="course-icon"
+                    >
+                        Σ
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            FORMULA LIBRARY
+                        </span>
+
+                        <h2 id="courseTitle"></h2>
+
+                        <p id="courseDescription"></p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="formula-total">
+
+                    <strong id="courseFormulaCount">
+                        0
+                    </strong>
+
+                    <small>
+                        فرمول
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ==================================================
+                 FORMULA FILTER
+            ================================================== -->
+
+            <div class="formula-toolbar">
+
+
+                <select id="chapterFilter">
+
+                    <option value="all">
+                        همه مباحث
+                    </option>
+
+                </select>
+
+
+                <div class="search-box">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="formulaSearch"
+                        placeholder="جستجوی فرمول، متغیر یا کاربرد..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ==================================================
+                 FORMULA LIST
+            ================================================== -->
+
+            <div
+                id="formulas"
+                class="formula-grid"
+            ></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid-pro">
+
+
+                <!-- Column 1 -->
+
+                <div class="footer-col">
+
+
+                    <a
+                        class="logo"
+                        href="#home"
+                        style="text-decoration:none;"
+                    >
+
+                        <span>
+
+                            <img
+                                src="photo/لوگو انجمن.webp"
+                                alt="لوگوی انجمن"
+                            >
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-desc">
+
+                        انجمن علمی مهندسی شیمی دانشگاه اردکان؛
+                        مرجع تخصصی دانشجویان برای توسعه دانش فنی،
+                        پژوهش و مهارت‌های صنعتی
+
+                    </p>
+
+
+                    <div class="dock">
+
+
+                        <a
+                            href="https://www.instagram.com/chemeng_ard?igsh=dTk4bmN6ODViMWFk"
+                            aria-label="Instagram"
+                        >
+
+                            <div class="icon">
+
+                                <img
+                                    src="photo/Instagram.webp"
+                                    alt="Instagram"
+                                    style="width:40px;height:40px;"
+                                >
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="https://t.me/chemeng_ard"
+                            aria-label="Telegram"
+                        >
+
+                            <div class="icon">
+
+                                <img
+                                    src="photo/Telegram.webp"
+                                    alt="Telegram"
+                                    style="width:40px;height:40px;"
+                                >
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href=""
+                            aria-label="Youtube"
+                        >
+
+                            <div class="icon">
+
+                                <img
+                                    src="photo/Youtube.webp"
+                                    alt="Youtube"
+                                    style="width:40px;height:40px;"
+                                >
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href=""
+                            aria-label="LinkedIn"
+                        >
+
+                            <div class="icon">
+
+                                <img
+                                    src="photo/Linkedin (1).webp"
+                                    alt="LinkedIn"
+                                    style="width:40px;height:40px;"
+                                >
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Column 2 -->
+
+                <div class="footer-col">
+
+                    <h4 class="footer-title">
+                        دسترسی سریع
+                    </h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#news">
+                                اخبار انجمن
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="event.html">
+                                رویدادها
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="magazine.html">
+                                نشریه علمی
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about-society.html">
+                                اگزوکاف
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Column 3 -->
+
+                <div class="footer-col">
+
+                    <h4 class="footer-title">
+                        ارتباط
+                    </h4>
+
+                    <div class="footer-contact">
+
+                        <p>
+                            ساختمان نور ، دفتر انجمن های علمی
+                        </p>
+
+                        <a href="mailto:chemeng.ard.uni@gmail.com">
+                            ایمیل: chemeng.ard.uni@gmail.com
+                        </a>
+
+                        <a href="tel:+989932540083">
+                            تماس: 09932540083
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Column 4 -->
+
+                <div class="footer-col">
+
+                    <h4 class="footer-title">
+                        موقعیت
+                    </h4>
+
+                    <div class="card map-wrapper">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6745.331393596361!2d53.99472273342912!3d32.2939648323962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa42c9f40da3837%3A0xb48e002cca7dd604!2z2K_Yp9mG2LTar9in2Ycg2KfYsdiv2qnYp9mG!5e0!3m2!1sfa!2s!4v1789821347348!5m2!1sfa!2s"
+                            width="100%"
+                            height="200"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                        >
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Copyright -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © تمامی حقوق متعلق به انجمن علمی مهندسی شیمی
+                    دانشگاه اردکان می باشد.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================================================
+         ORIGINAL JAVASCRIPT
+    ================================================== -->
+
+    <script src="js/Formula Library.js"></script>
+
+    <script src="js/next .js"></script>
+
+
+</body>
+
+</html>

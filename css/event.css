@@ -1,0 +1,221 @@
+
+/* تنظیمات پایه صفحه جدید */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #05080f; /* پس‌زمینه فوق تیره */
+    font-family:"Vazirmatn",sans-serif;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.new-page-wrapper {
+    padding: 80px 0;
+}
+
+.content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* بخش هدر (Hero) */
+.page-hero {
+    text-align: right;
+    margin-bottom: 70px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    max-width: 800px;
+}
+
+/* سیستم گرید ۲ ستونه */
+.courses-grid-system {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* دو ستون مساوی */
+    gap: 40px;
+}
+
+/* کارت اصلی */
+.main-course-card {
+    background: #0f172a; /* رنگ کارت تیره */
+    height: 380px; /* ارتفاع ثابت برای تقارن */
+    border-radius: 45px;
+    display: flex;
+    flex-direction: row-reverse; /* پوستر راست، متن چپ */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+}
+
+.main-course-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* بخش تصویر (پوستر) */
+.poster-container {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+/* باکس شناور پوستر با نسبت دقیق A4 */
+.a4-floating-card {
+    height: 100%;
+    aspect-ratio: 1 / 1.414; /* نسبت طلایی A4 */
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.a4-floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* فیت شدن کامل بدون ذره‌ای فضای خالی */
+    display: block;
+}
+
+/* بخش متن کارت */
+.info-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.category-tag {
+    color: #60a5fa;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.info-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.info-container p {
+    color: #94a3b8;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* دکمه ثبت نام */
+.btn-enroll {
+    background: linear-gradient(135deg, #ff2727 0%, #970000 100%);
+    color: rgb(255, 255, 255);
+    padding: 15px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    text-align: center;
+    transition: 0.3s;
+}
+.btn-enroll-1 {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+.btn-enroll:hover {
+    box-shadow: 0 15px 30px rgba(235, 37, 37, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+.btn-enroll-1:hover {
+    box-shadow: 0 15px 30px rgba(37, 67, 235, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* ریسپانسیو برای تبلت و موبایل */
+@media (max-width: 1100px) {
+    .courses-grid-system {
+        grid-template-columns: 1fr; /* تک ستونه شدن */
+    }
+    .main-course-card {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-course-card {
+        flex-direction: column;
+        height: auto;
+    }
+    .poster-container {
+        width: 100%;
+        height: 400px;
+    }
+}
+body.light-mode {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+
+body.light-mode .main-course-card,
+body.light-mode .a4-floating-card,
+body.light-mode .info-container {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .hero-badge {
+  background: rgba(59, 130, 246, 0.08) !important;
+  color: #2563eb !important;
+}
+
+body.light-mode .btn-enroll,
+body.light-mode .btn-enroll-1 {
+  color: #fff !important;
+}
+

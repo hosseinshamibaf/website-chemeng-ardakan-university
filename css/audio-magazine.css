@@ -1,0 +1,1809 @@
+/* استایل اختصاصی نشریه صوتی */
+
+/* Hero Section */
+body{
+    font-family:"Vazirmatn",sans-serif;
+}
+.audio-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.hero-image-box {
+    width: 550px;
+    height: 350px;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.hero-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+/* Player Box */
+.player-box {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 50px;
+    box-shadow: var(--shadow);
+}
+
+.main-player {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Episodes Grid (3 in 5) */
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.episode-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 15px;
+    aspect-ratio: 1 / 1; /* مربع */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.thumb {
+    flex: 1;
+    background: #1a2840; /* رنگ زمینه تصویر در صورت عدم وجود */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .audio-hero { flex-direction: column-reverse; }
+    .hero-image-box { flex: 0 0 100%; width: 100%; }
+    .episodes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .episodes-grid { grid-template-columns: 1fr; }
+}
+/* تنظیمات شبکه (Grid) برای نمایش ۳ در ۵ */
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ۳ ستون */
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* استایل بدنه اصلی کارت */
+.episode-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* مربع کامل */
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.episode-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* باکس تصویر و لایه روی آن */
+.episode-thumb {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.episode-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.episode-card:hover .episode-thumb img {
+    transform: scale(1.1);
+}
+
+/* لایه تاریک‌کننده پایین عکس برای خوانایی متن */
+.episode-thumb::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+/* آیکون پخش که هنگام هاور ظاهر می‌شود */
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.episode-card:hover .play-overlay {
+    opacity: 1;
+}
+
+/* اطلاعات متنی پایین کارت */
+.episode-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 3;
+    text-align: right;
+}
+
+.episode-info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.episode-info p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* واکنش‌گرایی برای تبلت و موبایل */
+@media (max-width: 992px) {
+    .episodes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .episodes-grid { grid-template-columns: 1fr; }
+}
+/* پلیر اپیزودها */
+
+.episode-info audio{
+    width: 100%;
+    margin-top: 12px;
+    height: 42px;
+    border-radius: 12px;
+}
+
+.episode-info audio::-webkit-media-controls-panel{
+    background: #1a2840;
+}
+
+.episode-info audio::-webkit-media-controls-play-button,
+.episode-info audio::-webkit-media-controls-mute-button{
+    filter: brightness(100);
+}
+
+.episode-info audio::-webkit-media-controls-current-time-display,
+.episode-info audio::-webkit-media-controls-time-remaining-display{
+    color: white;
+}
+
+.play-overlay{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.episode-info{
+    backdrop-filter: blur(6px);
+}
+body.light-mode {
+  --card: #ffffff;
+  --border: #dbe3ee;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --primary: #2563eb;
+}
+
+/* سطح‌های اصلی */
+body.light-mode .player-box,
+body.light-mode .episode-card,
+body.light-mode .audio-wrapper,
+body.light-mode .magazine-card,
+body.light-mode .audio-panel,
+body.light-mode .audio-container {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #dbe3ee !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* متن داخل کارت‌ها */
+body.light-mode .player-box *,
+body.light-mode .episode-card *,
+body.light-mode .audio-wrapper *,
+body.light-mode .magazine-card * {
+  color: #0f172a !important;
+}
+
+/* fallback تصویر/کاور */
+body.light-mode .episode-cover,
+body.light-mode .audio-cover,
+body.light-mode .cover-placeholder {
+  background: #eef2f7 !important;
+}
+
+/* overlay تیره */
+body.light-mode .overlay,
+body.light-mode .cover-overlay {
+  background: linear-gradient(transparent, rgba(255,255,255,0.95)) !important;
+}
+
+/* کنترل audio */
+body.light-mode .episode-info audio::-webkit-media-controls-panel {
+  background: #eef2f7 !important;
+}
+
+body.light-mode .episode-info audio::-webkit-media-controls-time-remaining-display {
+  color: #0f172a !important;
+}
+body.light-mode .episode-thumb::after {
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.75)) !important;
+}
+
+body.light-mode .episode-info {
+  z-index: 3 !important;
+}
+
+body.light-mode .episode-info h4 {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+body.light-mode .episode-info p {
+  color: #2563eb !important;
+  text-shadow: none !important;
+}
+
+/* اگر دکمه‌ی play روی کاور هم در لایت مود تیره/نامناسب است */
+body.light-mode .play-overlay {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   SPECIAL EPISODE — OLD DESIGN
+   ========================================================= */
+
+.special-episode {
+    position: relative;
+    width: min(1310px, calc(100% - 0px));
+    min-height: 430px;
+
+    margin: 70px auto;
+
+    padding: 70px 50px 50px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(10, 64, 105, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #061321 0%,
+            #081a2c 100%
+        );
+
+    border: 1px solid rgba(61, 170, 255, 0.20);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   TOP SPECIAL EPISODE TITLE
+   ========================================================= */
+
+.special-header {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    width: max-content;
+
+    padding: 0 25px;
+
+    text-align: center;
+
+    background: #061321;
+}
+
+
+.special-label {
+    display: block;
+
+    margin: -2px 0 0;
+
+    color: #35aaff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    line-height: 28px;
+
+    text-shadow:
+        0 0 12px rgba(38, 163, 255, 0.45);
+}
+
+
+/*
+   در طراحی قبلی عنوان و توضیح داخل Header وجود نداشت.
+   بنابراین مخفی می‌شوند و بخش اصلی اطلاعات را نمایش می‌دهد.
+*/
+
+.special-header h2,
+.special-header p {
+    display: none;
+}
+
+
+/* خط کوچک زیر عنوان */
+
+.special-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -14px;
+
+    transform: translateX(-50%);
+
+    width: 34px;
+    height: 2px;
+
+    background: #299fff;
+
+    box-shadow:
+        0 0 10px rgba(41, 159, 255, 0.8);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.special-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    min-height: 320px;
+
+    display: grid;
+
+    grid-template-columns:
+        350px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    direction: ltr;
+}
+
+
+/* =========================================================
+   LEFT VISUAL BOX
+   ========================================================= */
+
+.special-cover-box {
+    position: relative;
+
+    width: 350px;
+    height: 294px;
+
+    max-width: 100%;
+
+    justify-self: start;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22, 117, 183, 0.13),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #081b2d,
+            #071625
+        );
+
+    border: 1px solid rgba(35, 157, 236, 0.28);
+
+    box-shadow:
+        inset 0 0 40px rgba(20, 110, 180, 0.05),
+        0 10px 35px rgba(0, 0, 0, 0.20);
+}
+/* =========================================
+   PODCAST COVER BEHIND MICROPHONE
+   ========================================= */
+
+.special-cover {
+    display: block !important;
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+
+    opacity: 0.32;
+
+    filter:
+        brightness(0.55)
+        saturate(0.85);
+
+    border-radius: inherit;
+}
+
+
+/* لایه تیره روی عکس */
+.cover-overlay {
+    display: block !important;
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 16, 29, 0.35),
+            rgba(3, 16, 29, 0.72)
+        );
+}
+
+
+/* نور آبی روی کاور */
+.cover-glow {
+    display: block !important;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #1597ff;
+
+    filter: blur(75px);
+
+    opacity: 0.13;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* میکروفون بالای عکس */
+.special-microphone {
+    z-index: 6;
+}
+
+
+/* دایره‌های میکروفون بالای عکس */
+.mic-circle {
+    z-index: 1;
+}
+
+
+/* Equalizer کاملاً روی عکس */
+.special-equalizer {
+    z-index: 8;
+}
+
+
+/* EP SPECIAL روی عکس */
+.special-cover-box::after {
+    z-index: 10;
+}
+
+/* =========================================================
+   REMOVE PODCAST COVER FROM OLD DESIGN
+   ========================================================= */
+
+.special-cover {
+    display: none;
+}
+
+.cover-overlay {
+    display: none;
+}
+
+.cover-glow {
+    display: none;
+}
+
+
+/* =========================================================
+   MICROPHONE
+   ========================================================= */
+
+.special-microphone {
+    position: absolute;
+
+    left: 50%;
+    top: 45%;
+
+    width: 80px;
+    height: 80px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* میکروفون */
+
+.mic-symbol svg {
+    width: 53px;
+    height: 53px;
+
+    fill: none;
+
+    stroke: #3baeff;
+
+    stroke-width: 1.5;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(39, 163, 255, 0.75)
+        );
+}
+
+
+/* =========================================================
+   MICROPHONE CIRCLES
+   ========================================================= */
+
+.mic-circle {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(29, 153, 237, 0.14);
+
+    animation: none;
+}
+
+
+.mic-circle-1 {
+    width: 100px;
+    height: 100px;
+}
+
+
+.mic-circle-2 {
+    width: 145px;
+    height: 145px;
+}
+
+
+/* =========================================================
+   EQUALIZER
+   ========================================================= */
+
+.special-equalizer {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 57px;
+
+    transform: translateX(-50%);
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    z-index: 8;
+}
+
+
+.special-equalizer span {
+    width: 3px;
+    height: 14px;
+
+    border-radius: 5px;
+
+    background: #31aaff;
+
+    box-shadow:
+        0 0 6px rgba(35, 166, 255, 0.8);
+
+    animation: none;
+}
+
+
+/* =========================================================
+   PREMIUM NEON WAVE EQUALIZER
+   ========================================================= */
+
+.special-equalizer {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    transform: translateX(-50%);
+
+    width: 105px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    z-index: 8;
+}
+
+
+/* خطوط Equalizer */
+
+.special-equalizer span {
+    position: relative;
+
+    width: 3px;
+
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        180deg,
+        #72ceff 0%,
+        #159cff 55%,
+        #0878c9 100%
+    );
+
+    box-shadow:
+        0 0 5px rgba(38, 169, 255, 0.85),
+        0 0 12px rgba(25, 148, 255, 0.35);
+
+    transform-origin: center;
+
+    transition:
+        height 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   حالت عادی — یک Wave ظریف
+   ========================================================= */
+
+.special-equalizer span:nth-child(1),
+.special-equalizer span:nth-child(11) {
+    height: 7px;
+}
+
+.special-equalizer span:nth-child(2),
+.special-equalizer span:nth-child(10) {
+    height: 12px;
+}
+
+.special-equalizer span:nth-child(3),
+.special-equalizer span:nth-child(9) {
+    height: 18px;
+}
+
+.special-equalizer span:nth-child(4),
+.special-equalizer span:nth-child(8) {
+    height: 24px;
+}
+
+.special-equalizer span:nth-child(5),
+.special-equalizer span:nth-child(7) {
+    height: 17px;
+}
+
+.special-equalizer span:nth-child(6) {
+    height: 28px;
+}
+
+
+/* =========================================================
+   هنگام پخش — حرکت Wave
+   ========================================================= */
+
+.special-cover-box.playing
+.special-equalizer span {
+    animation:
+        premiumWave 900ms ease-in-out infinite;
+}
+
+
+/* زمان‌بندی حرکت */
+
+.special-equalizer span:nth-child(1),
+.special-equalizer span:nth-child(11) {
+    animation-delay: 0ms;
+}
+
+.special-equalizer span:nth-child(2),
+.special-equalizer span:nth-child(10) {
+    animation-delay: 90ms;
+}
+
+.special-equalizer span:nth-child(3),
+.special-equalizer span:nth-child(9) {
+    animation-delay: 180ms;
+}
+
+.special-equalizer span:nth-child(4),
+.special-equalizer span:nth-child(8) {
+    animation-delay: 270ms;
+}
+
+.special-equalizer span:nth-child(5),
+.special-equalizer span:nth-child(7) {
+    animation-delay: 360ms;
+}
+
+.special-equalizer span:nth-child(6) {
+    animation-delay: 450ms;
+}
+
+
+/* =========================================================
+   انیمیشن اصلی
+   ========================================================= */
+
+@keyframes premiumWave {
+
+    0% {
+        transform: scaleY(0.45);
+
+        opacity: 0.65;
+
+        box-shadow:
+            0 0 4px rgba(38, 169, 255, 0.65),
+            0 0 8px rgba(25, 148, 255, 0.25);
+    }
+
+    25% {
+        transform: scaleY(1.15);
+
+        opacity: 0.9;
+
+        box-shadow:
+            0 0 6px rgba(38, 169, 255, 0.9),
+            0 0 14px rgba(25, 148, 255, 0.4);
+    }
+
+    50% {
+        transform: scaleY(0.65);
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px rgba(38, 169, 255, 1),
+            0 0 18px rgba(25, 148, 255, 0.5);
+    }
+
+    75% {
+        transform: scaleY(1.3);
+
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scaleY(0.45);
+
+        opacity: 0.65;
+    }
+}
+
+
+/* =========================================================
+   موبایل
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .special-equalizer {
+        width: 90px;
+
+        gap: 2.5px;
+
+        bottom: 53px;
+    }
+
+    .special-equalizer span {
+        width: 3px;
+    }
+}
+
+
+/* =========================================================
+   EPISODE TEXT AT BOTTOM LEFT
+   ========================================================= */
+
+.special-cover-box::after {
+    content: "EP. SPECIAL";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 13px;
+
+    transform: translateX(-50%);
+
+    color: #71889b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   EPISODE BADGE
+   ========================================================= */
+
+.episode-badge {
+    position: absolute;
+
+    top: -10px;
+    right: 0;
+
+    z-index: 20;
+
+    padding: 0;
+
+    width: 155px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    color: #35aaff;
+
+    background: #071a2c;
+
+    border: 1px solid rgba(38, 158, 241, 0.28);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0;
+
+    letter-spacing: 1px;
+}
+
+
+/*
+   متن اصلی Badge
+*/
+
+.episode-badge::after {
+    content: "SPECIAL EPISODE ★";
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   RIGHT INFORMATION
+   ========================================================= */
+
+.special-info {
+    width: 100%;
+
+    direction: rtl;
+
+    text-align: right;
+
+    padding-top: 5px;
+}
+
+
+/* عنوان کوچک */
+
+.episode-small-title {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #159cff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* عنوان اصلی */
+
+.special-info h3 {
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+/* توضیحات */
+
+.special-info p {
+    width: 100%;
+
+    max-width: 620px;
+
+    margin: 0 0 32px;
+
+    color: #88a4b9;
+
+    font-size: 12px;
+
+    line-height: 2.3;
+}
+
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
+
+.special-player {
+    width: 100%;
+
+    max-width: 535px;
+
+    height: 77px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    direction: ltr;
+
+    border-radius: 15px;
+
+    background:
+        rgba(4, 16, 29, 0.72);
+
+    border:
+        1px solid rgba(48, 158, 235, 0.22);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* دکمه Play */
+
+.special-play {
+    order: 2;
+
+    flex-shrink: 0;
+
+    width: 49px;
+    height: 49px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1598f1,
+            #249ff0
+        );
+
+    box-shadow:
+        0 0 18px rgba(23, 151, 239, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.special-play:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(23, 151, 239, 0.35);
+}
+
+
+.special-play svg {
+    width: 20px;
+    height: 20px;
+
+    fill: #ffffff;
+}
+
+
+/* محتوای پلیر */
+
+.special-player-content {
+    order: 1;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* زمان و وضعیت */
+
+.special-player-top {
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: #839caf;
+
+    font-size: 9px;
+}
+
+
+/* زمان */
+
+#playerTime {
+    color: #7893a7;
+
+    white-space: nowrap;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.special-progress {
+    position: relative;
+
+    width: 100%;
+
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.special-progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #087dcc,
+            #39adff
+        );
+
+    box-shadow:
+        0 0 8px rgba(35, 165, 255, 0.55);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .special-episode {
+        padding:
+            65px 35px 40px;
+    }
+
+    .special-content {
+        grid-template-columns:
+            300px
+            minmax(0, 1fr);
+
+        gap: 45px;
+    }
+
+    .special-cover-box {
+        width: 300px;
+        height: 270px;
+    }
+
+    .special-info h3 {
+        font-size: 31px;
+    }
+
+    .special-info p {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .special-episode {
+
+        width: calc(100% - 20px);
+
+        min-height: auto;
+
+        margin: 50px auto;
+
+        padding:
+            55px 20px 30px;
+
+        border-radius: 22px;
+    }
+
+
+    .special-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    /*
+       اول پنل
+       بعد اطلاعات
+    */
+
+    .special-cover-box {
+
+        grid-column: 1;
+
+        width: min(100%, 330px);
+
+        height: 280px;
+
+        justify-self: center;
+    }
+
+
+    .special-info {
+
+        grid-column: 1;
+
+        text-align: center;
+
+        padding: 0;
+    }
+
+
+    .episode-badge {
+
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+
+    .special-info h3 {
+        font-size: 29px;
+    }
+
+
+    .special-info p {
+
+        max-width: 600px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 12px;
+    }
+
+
+    .special-player {
+
+        max-width: 100%;
+
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .special-episode {
+
+        width: calc(100% - 12px);
+
+        padding:
+            50px 14px 25px;
+    }
+
+
+    .special-label {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .special-cover-box {
+
+        width: 100%;
+
+        max-width: 290px;
+
+        height: 250px;
+    }
+
+
+    .special-info h3 {
+        font-size: 26px;
+    }
+
+
+    .special-info p {
+        font-size: 11px;
+    }
+
+
+    .special-player {
+
+        height: 70px;
+
+        padding: 0 10px;
+
+        gap: 10px;
+    }
+
+
+    .special-play {
+
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* =========================================
+   SPECIAL EPISODE — TOP BORDER TITLE
+   ========================================= */
+
+/* اجازه می‌دهیم عنوان کمی بیرون از باکس قرار بگیرد */
+.special-episode {
+    overflow: visible;
+}
+
+
+/* عنوان بالای خط */
+.special-header {
+    position: absolute;
+
+    top: -14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    width: max-content;
+
+    padding: 0 28px;
+
+    margin: 0;
+
+    background: #061321;
+
+    text-align: center;
+}
+
+
+/* متن SPECIAL EPISODE */
+.special-label {
+    display: block;
+
+    margin: 0;
+
+    color: #35aaff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    line-height: 28px;
+
+    text-shadow:
+        0 0 12px rgba(38, 163, 255, 0.45);
+}
+
+
+/* خط کوچک زیر عنوان */
+.special-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -18px;
+
+    transform: translateX(-50%);
+
+    width: 42px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background: #299fff;
+
+    box-shadow:
+        0 0 10px rgba(41, 159, 255, 0.8),
+        0 0 20px rgba(41, 159, 255, 0.25);
+}
+
+
+/* =========================================
+   حذف SPECIAL EPISODE روی کاور
+   ========================================= */
+
+.episode-badge {
+    display: none !important;
+}
+
+/* =========================================================
+   SPECIAL EPISODE — LIGHT MODE
+   فقط زمینه سفید می‌شود؛ جزئیات طراحی حفظ می‌شوند
+   ========================================================= */
+
+body.light-mode .special-episode {
+
+    /* فقط پس‌زمینه اصلی سفید */
+    background: #ffffff !important;
+
+    /* Border اصلی حفظ شود */
+    border: 1px solid #cfe0f2 !important;
+
+    /* سایه مشابه طراحی اصلی */
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.10) !important;
+
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   هدر SPECIAL EPISODE
+   ========================================================= */
+
+body.light-mode .special-header {
+
+    background: #ffffff !important;
+
+    color: #0f172a;
+
+    border: none !important;
+}
+
+
+/* متن SPECIAL EPISODE */
+body.light-mode .special-label {
+
+    color: #168ff0 !important;
+
+    text-shadow:
+        0 0 12px rgba(38, 163, 255, 0.30) !important;
+}
+
+
+/* خط آبی زیر عنوان */
+body.light-mode .special-header::after {
+
+    background: #299fff !important;
+
+    box-shadow:
+        0 0 10px rgba(41, 159, 255, 0.8),
+        0 0 20px rgba(41, 159, 255, 0.25) !important;
+}
+
+
+/* =========================================================
+   COVER BOX
+   ========================================================= */
+
+body.light-mode .special-cover-box {
+
+    /* خود کادر تصویر همچنان تیره بماند */
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(22, 117, 183, 0.13),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #677c96,
+            #627588
+        ) !important;
+
+    border: 1px solid rgba(35, 157, 236, 0.35) !important;
+
+    box-shadow:
+        inset 0 0 40px rgba(20, 110, 180, 0.05),
+        0 10px 35px rgba(15, 23, 42, 0.15) !important;
+}
+
+
+/* =========================================================
+   COVER IMAGE
+   خیلی مهم:
+   تصویر نباید در Light Mode سفید و بی‌رنگ شود
+   ========================================================= */
+
+body.light-mode .special-cover {
+
+    display: block !important;
+
+    opacity: 0.32 !important;
+
+    filter:
+        brightness(0.55)
+        saturate(0.85) !important;
+}
+
+
+/* اگر جایی cover-overlay فعال شد، حذف نشود */
+body.light-mode .special-cover-box .cover-overlay {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   BLUE GLOW
+   ========================================================= */
+
+body.light-mode .special-cover-box .cover-glow {
+
+    display: block !important;
+
+    opacity: 0.13 !important;
+
+    background: #1597ff !important;
+}
+
+
+/* =========================================================
+   MICROPHONE
+   ========================================================= */
+
+body.light-mode .special-microphone {
+
+    opacity: 1 !important;
+}
+
+
+body.light-mode .mic-symbol svg {
+
+    stroke: #3baeff !important;
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(39, 163, 255, 0.75)
+        ) !important;
+}
+
+
+/* دایره‌های اطراف میکروفون */
+body.light-mode .mic-circle {
+
+    border-color:
+        rgba(29, 153, 237, 0.20) !important;
+}
+
+
+/* =========================================================
+   EQUALIZER
+   ========================================================= */
+
+body.light-mode .special-equalizer {
+
+    opacity: 1 !important;
+}
+
+
+body.light-mode .special-equalizer span {
+
+    background: linear-gradient(
+        180deg,
+        #72ceff 0%,
+        #159cff 55%,
+        #0878c9 100%
+    ) !important;
+
+    box-shadow:
+        0 0 5px rgba(38, 169, 255, 0.85),
+        0 0 12px rgba(25, 148, 255, 0.35) !important;
+}
+
+
+/* =========================================================
+   EP. SPECIAL
+   ========================================================= */
+
+body.light-mode .special-cover-box::after {
+
+    color: #71889b !important;
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+body.light-mode .special-info {
+
+    color: #0f172a !important;
+}
+
+
+/* عنوان کوچک */
+body.light-mode .episode-small-title {
+
+    color: #159cff !important;
+}
+
+
+/* عنوان اصلی */
+body.light-mode .special-info h3 {
+
+    color: #0f172a !important;
+}
+
+
+/* توضیحات */
+body.light-mode .special-info p {
+
+    color: #526b80 !important;
+}
+
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
+
+body.light-mode .special-player {
+
+    background:
+        rgba(248, 250, 252, 0.95) !important;
+
+    border:
+        1px solid rgba(48, 158, 235, 0.30) !important;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+
+/* وضعیت پخش */
+body.light-mode .special-player-top {
+
+    color: #526b80 !important;
+}
+
+
+/* زمان */
+body.light-mode #playerTime {
+
+    color: #526b80 !important;
+}
+
+
+/* نوار پیشرفت */
+body.light-mode .special-progress {
+
+    background:
+        rgba(15, 23, 42, 0.10) !important;
+}
+
+
+/* نوار پرشونده */
+body.light-mode .special-progress-fill {
+
+    background:
+        linear-gradient(
+            90deg,
+            #087dcc,
+            #39adff
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(35, 165, 255, 0.55) !important;
+}
+
+
+/* دکمه Play */
+body.light-mode .special-play {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1598f1,
+            #249ff0
+        ) !important;
+
+    box-shadow:
+        0 0 18px rgba(23, 151, 239, 0.20) !important;
+}
+
+
+/* آیکون Play */
+body.light-mode .special-play svg {
+
+    fill: #ffffff !important;
+}
+
+
+
+

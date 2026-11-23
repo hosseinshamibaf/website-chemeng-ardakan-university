@@ -1,0 +1,1729 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --bg:#07111f;
+    --surface:rgba(7,17,31,0.72);
+    --surface-light:rgba(15,34,54,0.72);
+
+    --blue:#70c9ff;
+    --blue-light:#b9e7ff;
+
+    --text:#eef8ff;
+    --muted:#8fa7ba;
+
+    --border:rgba(150,210,255,.13);
+    --border-hover:rgba(112,201,255,.34);
+
+    --shadow:0 18px 50px rgba(0,0,0,.20);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    min-height:100vh;
+
+    font-family:"Vazirmatn",sans-serif;
+
+    color:var(--text);
+
+    background:
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(112,201,255,.075),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 88% 30%,
+            rgba(112,201,255,.045),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            145deg,
+            #040b14 0%,
+            #07111f 52%,
+            #091827 100%
+        );
+
+    overflow-x:hidden;
+}
+
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-glow{
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.13;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+.glow-one{
+    top:-190px;
+    right:-130px;
+
+    background:#5bc1ff;
+}
+
+
+.glow-two{
+    bottom:-230px;
+    left:-140px;
+
+    background:#2186c2;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:min(
+        1180px,
+        calc(100% - 36px)
+    );
+
+    margin:auto;
+
+    padding:
+        45px
+        0
+        80px;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        92px
+        1fr
+        auto;
+
+    align-items:center;
+
+    gap:25px;
+
+    min-height:185px;
+
+    padding:34px 38px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,17,31,.94),
+            rgba(11,30,49,.72)
+        );
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+}
+
+
+.hero-logo{
+    width:84px;
+    height:84px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(112,201,255,.28);
+
+    border-radius:21px;
+
+    color:var(--blue);
+
+    background:
+        rgba(112,201,255,.045);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:50px;
+}
+
+
+.hero-text > span,
+.course-title > div > span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:var(--blue);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    direction:ltr;
+}
+
+
+.hero-text h1{
+
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            38px
+        );
+
+    line-height:1.5;
+
+    font-weight:800;
+}
+
+
+.hero-text p{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics{
+
+    display:flex;
+
+    gap:10px;
+}
+
+
+.stat{
+
+    min-width:80px;
+
+    padding:13px 12px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+
+.stat strong{
+
+    display:block;
+
+    color:var(--blue-light);
+
+    font-size:23px;
+}
+
+
+.stat small{
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+
+/* ==================================================
+   SEARCH
+================================================== */
+
+.toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin:
+        24px
+        0
+        20px;
+}
+
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:min(
+        420px,
+        100%
+    );
+
+    height:48px;
+
+    padding:
+        0
+        15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:14px;
+
+    background:
+        var(--surface);
+
+    transition:
+        .25s ease;
+}
+
+
+.search-box:focus-within{
+
+    border-color:
+        var(--border-hover);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(112,201,255,.045);
+}
+
+
+.search-box > span{
+
+    color:var(--blue);
+
+    font-size:24px;
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    border:0;
+
+    outline:0;
+
+    color:var(--text);
+
+    background:transparent;
+
+    font-size:12px;
+}
+
+
+.search-box input::placeholder{
+
+    color:#647d91;
+}
+
+
+.toolbar p{
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+
+/* ==================================================
+   COURSES
+================================================== */
+
+.courses-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+}
+
+
+.course-card{
+
+    position:relative;
+
+    min-height:225px;
+
+    padding:24px;
+
+    cursor:pointer;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,28,46,.82),
+            rgba(7,17,31,.70)
+        );
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.course-card:hover{
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--border-hover);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.22);
+}
+
+
+.course-number{
+
+    position:absolute;
+
+    top:20px;
+
+    left:21px;
+
+    color:
+        rgba(185,230,255,.28);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    direction:ltr;
+}
+
+
+.course-symbol{
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:18px;
+
+    border:
+        1px solid
+        rgba(112,201,255,.20);
+
+    border-radius:14px;
+
+    color:var(--blue);
+
+    background:
+        rgba(112,201,255,.045);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:26px;
+}
+
+
+.course-card h3{
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+.course-card p{
+
+    min-height:46px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:2;
+}
+
+
+.course-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-top:17px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid
+        rgba(150,210,255,.07);
+}
+
+
+.badge{
+
+    padding:
+        5px
+        9px;
+
+    border:
+        1px solid
+        rgba(112,201,255,.13);
+
+    border-radius:999px;
+
+    color:var(--blue-light);
+
+    background:
+        rgba(112,201,255,.04);
+
+    font-size:9px;
+}
+
+
+.open-course{
+
+    color:var(--blue);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+
+/* ==================================================
+   FORMULA PAGE
+================================================== */
+
+/*
+    این قسمت مهم‌ترین تغییر طراحی است.
+*/
+
+
+#formulaSection{
+
+    padding-top:6px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    height:43px;
+
+    margin:
+        0
+        0
+        22px;
+
+    padding:
+        0
+        17px;
+
+    border:
+        1px solid
+        rgba(112,201,255,.16);
+
+    border-radius:12px;
+
+    color:
+        #a9dfff;
+
+    background:
+        rgba(112,201,255,.035);
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:500;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.back-button:hover{
+
+    border-color:
+        rgba(112,201,255,.32);
+
+    background:
+        rgba(112,201,255,.07);
+
+    transform:
+        translateX(3px);
+}
+
+
+.back-button:active{
+
+    transform:
+        translateX(1px);
+}
+
+
+/* ==================================================
+   COURSE HEADER
+================================================== */
+
+.course-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:18px;
+
+    padding:
+        25px
+        27px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(9,25,42,.82),
+            rgba(7,17,31,.68)
+        );
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.16);
+}
+
+
+.course-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    min-width:0;
+}
+
+
+.course-icon{
+
+    flex:0 0 auto;
+
+    width:65px;
+    height:65px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(112,201,255,.23);
+
+    border-radius:17px;
+
+    color:var(--blue);
+
+    background:
+        rgba(112,201,255,.045);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:30px;
+}
+
+
+.course-title h2{
+
+    font-size:23px;
+
+    line-height:1.6;
+}
+
+
+.course-title p{
+
+    max-width:760px;
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:2;
+}
+
+
+.formula-total{
+
+    flex:0 0 auto;
+
+    min-width:80px;
+
+    padding:
+        8px
+        16px;
+
+    text-align:center;
+
+    border-right:
+        1px solid
+        var(--border);
+}
+
+
+.formula-total strong{
+
+    display:block;
+
+    color:var(--blue-light);
+
+    font-size:24px;
+}
+
+
+.formula-total small{
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* ==================================================
+   FORMULA FILTER
+================================================== */
+
+.formula-toolbar{
+
+    display:flex;
+
+    flex-direction:row-reverse;
+
+    gap:11px;
+
+    margin-bottom:18px;
+}
+
+
+.formula-toolbar .search-box{
+
+    flex:1;
+
+    width:auto;
+}
+
+
+#chapterFilter{
+
+    min-width:190px;
+
+    height:48px;
+
+    padding:
+        0
+        14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:14px;
+
+    outline:none;
+
+    color:var(--text);
+
+    background:#0b1c2e;
+
+    font-size:11px;
+
+    cursor:pointer;
+}
+
+
+#chapterFilter option{
+
+    color:var(--text);
+
+    background:#0b1c2e;
+}
+
+
+/* ==================================================
+   FORMULA GRID
+================================================== */
+
+.formula-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+}
+
+
+/* ==================================================
+   NEW FORMULA CARD
+================================================== */
+
+/* =========================================================
+   FORMULA CARDS
+========================================================= */
+
+.formula-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.formula-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 28px 30px 25px;
+
+    border: 1px solid rgba(112, 201, 255, 0.16);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 18, 31, 0.94),
+            rgba(7, 17, 31, 0.78)
+        );
+
+    overflow: hidden;
+
+    transition:
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* نور ظریف بالای کارت */
+
+.formula-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(112, 201, 255, .65) 50%,
+            transparent 100%
+        );
+
+    opacity: .7;
+}
+
+
+/* نور گوشه کارت */
+
+.formula-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    right: -100px;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(112, 201, 255, .055),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.formula-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(112, 201, 255, .28);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, .20);
+}
+
+
+/* =========================================================
+   FORMULA HEADER
+========================================================= */
+
+.formula-heading {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+
+    padding: 0;
+}
+
+
+.formula-heading h3 {
+
+    color: #edf8ff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CHAPTER BADGE
+========================= */
+
+.chapter {
+
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .14);
+
+    border-radius: 10px;
+
+    color:
+        #9fd9f7;
+
+    background:
+        rgba(112, 201, 255, .06);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EXAM IMPORTANCE
+========================================================= */
+
+.exam {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin:
+        0
+        0
+        14px;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .12);
+
+    border-radius: 8px;
+
+    color:
+        #91c9e7;
+
+    background:
+        rgba(112, 201, 255, .035);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FORMULA AREA
+========================================================= */
+
+.equation {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 92px;
+
+    margin:
+        0
+        0
+        20px;
+
+    padding:
+        20px
+        25px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .10);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 11, 20, .88),
+            rgba(5, 16, 27, .65)
+        );
+
+    color:
+        #bfeaff;
+
+    direction: ltr;
+
+    text-align: center;
+
+    font-family:
+        "Times New Roman",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(112, 201, 255, .55)
+        rgba(255,255,255,.035);
+}
+
+
+/* =========================================================
+   CUSTOM FORMULA SCROLLBAR
+========================================================= */
+
+.equation::-webkit-scrollbar {
+
+    height: 7px;
+}
+
+
+.equation::-webkit-scrollbar-track {
+
+    margin:
+        0 14px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.035);
+}
+
+
+.equation::-webkit-scrollbar-thumb {
+
+    border-radius: 50px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .20);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(112, 201, 255, .30),
+            rgba(112, 201, 255, .72),
+            rgba(112, 201, 255, .30)
+        );
+}
+
+
+.equation::-webkit-scrollbar-thumb:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(112, 201, 255, .45),
+            rgba(112, 201, 255, .90),
+            rgba(112, 201, 255, .45)
+        );
+}
+
+
+/* =========================================================
+   INFORMATION BOXES
+========================================================= */
+
+.info {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin:
+        0
+        0
+        18px;
+}
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box {
+
+    min-height: 95px;
+
+    padding:
+        17px
+        18px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .095);
+
+    border-radius: 16px;
+
+    background:
+        rgba(13, 28, 44, .55);
+
+    transition:
+        border-color .2s ease,
+        background .2s ease;
+}
+
+
+.info-box:hover {
+
+    border-color:
+        rgba(112, 201, 255, .18);
+
+    background:
+        rgba(15, 34, 52, .65);
+}
+
+
+/* عنوان */
+
+.info-box strong {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 9px;
+
+    color:
+        #70cbff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* متن */
+
+.info-box span {
+
+    display: block;
+
+    color:
+        #91a7b8;
+
+    font-size: 10.5px;
+
+    line-height: 2;
+
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+.variables {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin:
+        0;
+}
+
+
+/* =========================
+   VARIABLE CHIP
+========================= */
+
+.variable {
+
+    padding:
+        6px
+        9px;
+
+    border:
+        1px solid
+        rgba(112, 201, 255, .09);
+
+    border-radius: 8px;
+
+    color:
+        #86b9d5;
+
+    background:
+        rgba(112, 201, 255, .035);
+
+    direction: ltr;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 8.5px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.variable:hover {
+
+    border-color:
+        rgba(112, 201, 255, .18);
+
+    background:
+        rgba(112, 201, 255, .06);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .formula-card {
+
+        padding:
+            22px
+            20px
+            20px;
+
+        border-radius: 21px;
+    }
+
+
+    .formula-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+
+    .formula-heading h3 {
+
+        font-size: 15px;
+    }
+
+
+    .chapter {
+
+        font-size: 9px;
+    }
+
+
+    .equation {
+
+        min-height: 82px;
+
+        padding:
+            17px
+            20px;
+
+        justify-content: flex-start;
+
+        font-size: 21px;
+    }
+
+
+    .info {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .info-box {
+
+        min-height: auto;
+
+        padding:
+            15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .formula-card {
+
+        padding:
+            19px
+            16px
+            17px;
+    }
+
+
+    .equation {
+
+        font-size: 19px;
+
+        min-height: 76px;
+    }
+
+
+    .info-box span {
+
+        font-size: 10px;
+    }
+}
+
+/* ==================================================
+   EMPTY
+================================================== */
+
+.empty{
+
+    grid-column:1/-1;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    border:
+        1px dashed
+        rgba(112,201,255,.20);
+
+    border-radius:18px;
+
+    color:var(--muted);
+
+    background:
+        rgba(255,255,255,.015);
+}
+
+
+.hidden{
+    display:none !important;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:900px){
+
+    .courses-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .formula-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .hero{
+
+        grid-template-columns:
+            78px 1fr;
+    }
+
+
+    .statistics{
+
+        grid-column:1/-1;
+
+        justify-content:flex-start;
+    }
+
+
+    .toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+
+    .toolbar .search-box{
+
+        width:100%;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:620px){
+
+    .container{
+
+        width:
+            calc(100% - 22px);
+
+        padding:
+            18px
+            0
+            55px;
+    }
+
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        padding:
+            24px
+            20px;
+
+        border-radius:21px;
+    }
+
+
+    .hero-logo{
+
+        width:62px;
+        height:62px;
+
+        font-size:37px;
+    }
+
+
+    .hero-text h1{
+
+        font-size:23px;
+    }
+
+
+    .statistics{
+
+        width:100%;
+    }
+
+
+    .stat{
+
+        flex:1;
+    }
+
+
+    .courses-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .course-card{
+
+        min-height:205px;
+    }
+
+
+    .back-button{
+
+        margin-bottom:18px;
+    }
+
+
+    .course-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:
+            21px;
+    }
+
+
+    .course-title h2{
+
+        font-size:20px;
+    }
+
+
+    .formula-total{
+
+        width:100%;
+
+        padding:
+            12px
+            0
+            0;
+
+        border-right:0;
+
+        border-top:
+            1px solid
+            var(--border);
+    }
+
+
+    .formula-toolbar{
+
+        flex-direction:column;
+    }
+
+
+    .formula-toolbar .search-box{
+
+        width:100%;
+    }
+
+
+    #chapterFilter{
+
+        width:100%;
+    }
+
+
+    .formula-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .info{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .formula-heading{
+
+        align-items:flex-start;
+    }
+
+
+    .formula-heading h3{
+
+        font-size:13px;
+    }
+
+
+    .equation{
+
+        font-size:18px;
+    }
+}
+
+
+/* ==================================================
+   REDUCE MOTION
+================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+    }
+}
+

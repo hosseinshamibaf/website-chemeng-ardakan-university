@@ -1,0 +1,191 @@
+
+/* تنظیمات پایه صفحه درباره ما */
+.about-page {
+    padding-top: 100px; /* فاصله برای هدر جدید */
+    background-color: var(--bg);
+}
+
+/* کارت شیشه‌ای بخش معرفی */
+.about-glass-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 50px;
+    margin-top: 40px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.about-content .highlight {
+    color: var(--primary);
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+/* استایل‌های سلسله‌مراتبی اعضا */
+.team-flow-section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.flow-level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+/* کارت‌های اعضا */
+.member-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+}
+
+.member-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.member-info h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.member-info .role {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* کارت شاخص دبیر */
+.lead-card {
+    max-width: 320px;
+    border: 1px solid rgba(79, 140, 255, 0.4);
+}
+
+/* خط اتصال */
+.connector-line {
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--primary), transparent);
+    margin: 0 auto 30px;
+}
+
+/* عنوان کارگروه رسانه */
+.media-group-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 80px 0 40px;
+}
+
+.media-group-title .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* استایل بخش متن معرفی */
+.about-intro-text {
+    padding: 60px 0 20px 0; /* فاصله از بالا و پایین */
+    text-align: center;
+    
+}
+
+.intro-wrapper {
+    max-width: 850px; /* محدود کردن عرض برای خوانایی بهتر متن‌های طولانی */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+/* خط تزیینی زیر عنوان */
+.intro-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary2));
+    border-radius: 2px;
+}
+
+.intro-paragraph {
+    font-size: 1.15rem;
+    line-height: 2; /* فاصله بین خطوط برای راحتی چشم */
+    color: var(--text);
+    opacity: 0.9;
+    text-align: justify; /* چیدمان مرتب متن */
+    text-justify: inter-word;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .intro-paragraph {
+        font-size: 1rem;
+        text-align: center; /* در موبایل مرکز‌چین بهتر است */
+    }
+    .intro-title {
+        font-size: 1.5rem;
+    }
+}
+body{
+    font-family:"Vazirmatn",sans-serif;
+}

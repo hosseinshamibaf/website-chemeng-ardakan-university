@@ -1,0 +1,1656 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #050b14;
+    --bg2: #091525;
+
+    --card: rgba(7, 17, 31, 0.72);
+    --card-light: rgba(255, 255, 255, 0.045);
+
+    --blue: #56b8ff;
+    --light-blue: #9bdcff;
+    --blue-soft: rgba(86, 184, 255, .12);
+
+    --text: #f4f8fc;
+    --muted: #8ea2b8;
+
+    --border: rgba(139, 210, 255, .13);
+    --border-strong: rgba(139, 210, 255, .28);
+
+    --danger: #ff6d7d;
+    --success: #6de7b7;
+
+    --shadow:
+        0 35px 100px rgba(0, 0, 0, .45);
+
+    --radius-xl: 30px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+    padding:0;
+
+    font-family:
+        "Vazirmatn",
+        Tahoma,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(86, 184, 255, .16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(35, 117, 180, .13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(86, 184, 255, .025),
+            transparent 45%
+        ),
+
+        var(--bg);
+
+    overflow-x: hidden;
+}
+
+
+button,
+textarea,
+input {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.calculator-app {
+    width: min(1180px, 100%);
+    min-height: 700px;
+
+    margin: 40px auto 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 27, 46, .96),
+            rgba(3, 10, 19, .985)
+        );
+
+    box-shadow:
+        var(--shadow);
+
+    isolation: isolate;
+
+
+}
+
+
+.calculator-app::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    top: -260px;
+    right: -180px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(86, 184, 255, .15),
+            transparent 68%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.calculator-header {
+    min-height: 88px;
+
+    padding:
+        18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, .015);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.brand-icon {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    color: #04101b;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--light-blue),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(86, 184, 255, .18);
+}
+
+
+.brand h1 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -.3px;
+}
+
+
+.brand p {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    direction: ltr;
+}
+
+
+.header-btn {
+    min-width: 90px;
+
+    padding:
+        10px 16px;
+
+    color: var(--light-blue);
+
+    background:
+        rgba(86, 184, 255, .055);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition:
+        .2s ease;
+}
+
+
+.header-btn:hover {
+    color: white;
+
+    background:
+        rgba(86, 184, 255, .12);
+
+    border-color:
+        var(--border-strong);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   DISPLAY
+========================================================= */
+
+.display {
+    min-height: 205px;
+
+    padding:
+        17px 27px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .08),
+            rgba(0, 0, 0, .18)
+        );
+
+    border-bottom:
+        1px solid var(--border);
+
+    direction: ltr;
+    text-align: right;
+}
+
+
+.display-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    direction: ltr;
+}
+
+
+.display-status button,
+.display-status span {
+    min-height: 27px;
+
+    padding:
+        4px 9px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    transition:
+        .18s ease;
+}
+
+
+.display-status button:hover {
+    color: var(--light-blue);
+
+    background:
+        rgba(86, 184, 255, .08);
+
+    border-color:
+        var(--border-strong);
+}
+
+
+.display-status button:first-child {
+    color: var(--light-blue);
+}
+
+
+.expression {
+    min-height: 38px;
+
+    margin-top: 18px;
+
+    color:
+        rgba(180, 202, 220, .72);
+
+    font-size: 17px;
+    font-weight: 500;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.result {
+    margin-top: 2px;
+
+    color: var(--text);
+
+    font-size:
+        clamp(38px, 6vw, 64px);
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    letter-spacing: -.8px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.error {
+    min-height: 20px;
+
+    margin-top: 5px;
+
+    color: var(--danger);
+
+    font-size: 12px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.tabs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 8px;
+
+    padding:
+        13px 18px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, .012);
+}
+
+
+.tab {
+    min-height: 43px;
+
+    padding:
+        9px 7px;
+
+    color: var(--muted);
+
+    background:
+        transparent;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        12px;
+
+    font-size: 12px;
+
+    transition:
+        .2s ease;
+}
+
+
+.tab:hover {
+    color: var(--text);
+
+    background:
+        rgba(255, 255, 255, .035);
+}
+
+
+.tab.active {
+    color: #06111d;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--light-blue),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 7px 20px rgba(86, 184, 255, .13);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.calculator-content {
+    padding:
+        20px 21px 24px;
+}
+
+
+.panel {
+    display: none;
+
+    animation:
+        panelIn .2s ease;
+}
+
+
+.panel.active {
+    display: block;
+}
+
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   FUNCTION GRID
+========================================================= */
+
+.function-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 8px;
+}
+
+
+.function-grid button,
+.matrix-buttons button,
+.base-buttons button {
+    min-height: 46px;
+
+    color:
+        #bfe6ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(86, 184, 255, .075),
+            rgba(255, 255, 255, .025)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        11px;
+
+    transition:
+        .18s ease;
+}
+
+
+.function-grid button:hover,
+.matrix-buttons button:hover,
+.base-buttons button:hover {
+    color: white;
+
+    background:
+        rgba(86, 184, 255, .13);
+
+    border-color:
+        rgba(86, 184, 255, .3);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .15);
+}
+
+
+.function-grid button:active,
+.matrix-buttons button:active,
+.base-buttons button:active {
+    transform:
+        translateY(0) scale(.98);
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.info-box {
+    margin-bottom: 14px;
+
+    padding: 15px;
+
+    display: grid;
+    gap: 7px;
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(86, 184, 255, .055),
+            rgba(255, 255, 255, .018)
+        );
+}
+
+
+.info-box strong {
+    color:
+        var(--light-blue);
+}
+
+
+code {
+    display: inline-block;
+
+    padding:
+        2px 6px;
+
+    color:
+        #c9edff;
+
+    direction: ltr;
+
+    border-radius:
+        5px;
+
+    background:
+        rgba(255, 255, 255, .055);
+}
+
+
+/* =========================================================
+   MEMORY
+========================================================= */
+
+.memory-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin:
+        15px 0;
+}
+
+
+.memory-buttons button {
+    min-height: 40px;
+
+    color:
+        #bfe6ff;
+
+    background:
+        rgba(86, 184, 255, .05);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        10px;
+
+    transition:
+        .18s ease;
+}
+
+
+.memory-buttons button:hover {
+    color: white;
+
+    background:
+        rgba(86, 184, 255, .12);
+
+    border-color:
+        var(--border-strong);
+}
+
+
+/* =========================================================
+   KEYPAD
+========================================================= */
+
+.keypad {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 9px;
+}
+
+
+.keypad button {
+    min-height: 63px;
+
+    color:
+        var(--text);
+
+    font-size: 18px;
+    font-weight: 500;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .055),
+            rgba(255, 255, 255, .022)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, .065);
+
+    border-radius:
+        14px;
+
+    transition:
+        .16s ease;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+
+.keypad button:hover {
+    background:
+        rgba(86, 184, 255, .105);
+
+    border-color:
+        rgba(86, 184, 255, .28);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.keypad button:active {
+    transform:
+        scale(.95);
+}
+
+
+.keypad .operator {
+    color:
+        var(--light-blue);
+
+    background:
+        rgba(86, 184, 255, .09);
+}
+
+
+.keypad .danger {
+    color:
+        #ffb4bd;
+
+    background:
+        rgba(255, 109, 125, .07);
+}
+
+
+.keypad .equal {
+    color:
+        #06111d;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--light-blue),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(86, 184, 255, .14);
+}
+
+
+.keypad .zero {
+    grid-column:
+        span 2;
+}
+
+
+/* =========================================================
+   MATRIX
+========================================================= */
+
+.matrix-inputs {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.matrix-inputs > div {
+    display: grid;
+
+    gap: 7px;
+}
+
+
+.matrix-inputs label {
+    color:
+        var(--muted);
+
+    font-size: 12px;
+}
+
+
+.matrix-inputs textarea {
+    min-height: 120px;
+
+    padding: 13px;
+
+    color:
+        #d9f2ff;
+
+    direction: ltr;
+
+    resize: vertical;
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, .18);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        13px;
+
+    transition:
+        .18s ease;
+}
+
+
+.matrix-inputs textarea:focus {
+    border-color:
+        rgba(86, 184, 255, .45);
+
+    box-shadow:
+        0 0 0 3px rgba(86, 184, 255, .06);
+}
+
+
+.matrix-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+#matrixOutput {
+    min-height: 125px;
+
+    margin-top: 12px;
+
+    padding: 15px;
+
+    color:
+        #cfeeff;
+
+    direction: ltr;
+
+    white-space: pre-wrap;
+
+    overflow-x: auto;
+
+    background:
+        rgba(0, 0, 0, .2);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        14px;
+}
+
+
+/* =========================================================
+   PROGRAMMER
+========================================================= */
+
+.base-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+
+.base-buttons .selected {
+    color:
+        #06111d;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--light-blue),
+            var(--blue)
+        );
+}
+
+
+.base-output {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+.base-output div {
+    min-width: 0;
+
+    padding: 14px;
+
+    display: grid;
+
+    gap: 6px;
+
+    direction: ltr;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        12px;
+}
+
+
+.base-output span {
+    color:
+        var(--muted);
+
+    font-size: 10px;
+}
+
+
+.base-output b {
+    word-break: break-all;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.history-panel {
+    position: absolute;
+
+    top: 88px;
+    right: 0;
+
+    width:
+        min(370px, 94%);
+
+    height:
+        calc(100% - 88px);
+
+    z-index: 20;
+
+    display: none;
+
+    overflow-y: auto;
+
+    background:
+        rgba(3, 11, 21, .97);
+
+    border-left:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        -20px 0 60px rgba(0, 0, 0, .18);
+}
+
+
+.history-panel.open {
+    display: block;
+
+    animation:
+        historyIn .22s ease;
+}
+
+
+@keyframes historyIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.history-header {
+    position: sticky;
+
+    top: 0;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        rgba(4, 13, 24, .97);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.history-header h2 {
+    font-size: 15px;
+}
+
+
+.history-header button {
+    padding:
+        6px 9px;
+
+    color:
+        var(--danger);
+
+    background:
+        rgba(255, 109, 125, .06);
+
+    border:
+        1px solid rgba(255, 109, 125, .12);
+
+    border-radius:
+        7px;
+
+    font-size: 10px;
+}
+
+
+.history-item {
+    margin: 10px;
+
+    padding: 13px;
+
+    cursor: pointer;
+
+    direction: ltr;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        12px;
+
+    transition:
+        .18s ease;
+}
+
+
+.history-item:hover {
+    background:
+        rgba(86, 184, 255, .065);
+
+    border-color:
+        rgba(86, 184, 255, .2);
+
+    transform:
+        translateX(-2px);
+}
+
+
+.history-expression {
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.history-result {
+    margin-top: 5px;
+
+    color:
+        var(--light-blue);
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+.empty-history {
+    padding: 45px 25px;
+
+    color:
+        var(--muted);
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding:
+        13px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        #6f8297;
+
+    font-size: 10px;
+
+    border-top:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.01);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+* {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(86,184,255,.3)
+        transparent;
+}
+
+
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+*::-webkit-scrollbar-thumb {
+    background:
+        rgba(86,184,255,.3);
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE 900
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .function-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .matrix-buttons {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 650
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 0;
+    }
+
+    .calculator-app {
+        width: calc(100% - 16px);
+        margin: 20px auto 0;
+        border-radius: 20px;
+    }
+
+    .calculator-header {
+        min-height: 72px;
+        padding: 13px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 13px;
+        font-size: 21px;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+
+    .brand p {
+        display: none;
+    }
+
+    .header-btn {
+        min-width: auto;
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .display {
+        min-height: 180px;
+        padding: 13px 15px 17px;
+    }
+
+    .result {
+        font-size: clamp(32px, 10vw, 48px);
+    }
+
+    .tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .tab {
+        min-height: 40px;
+        font-size: 11px;
+    }
+
+    .calculator-content {
+        padding: 12px;
+    }
+
+    .function-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .function-grid button {
+        min-height: 42px;
+        font-size: 11px;
+    }
+
+    .memory-buttons {
+        gap: 6px;
+    }
+
+    .memory-buttons button {
+        min-height: 38px;
+        font-size: 11px;
+    }
+
+    .keypad {
+        gap: 6px;
+    }
+
+    .keypad button {
+        min-height: 54px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .matrix-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .base-output {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .history-panel {
+        top: 72px;
+        width: min(360px, 96%);
+        height: calc(100% - 72px);
+    }
+
+    /* فقط فوتر کوچک ماشین حساب مخفی شود */
+    .calculator-app > footer {
+        display: none;
+    }
+
+    /* فوتر اصلی سایت نمایش داده شود */
+    .footer {
+        display: block;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 430
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .matrix-buttons {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .base-buttons {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .display-status button,
+    .display-status span {
+        font-size: 9px;
+
+        padding:
+            4px 7px;
+    }
+
+
+    .expression {
+        font-size: 14px;
+    }
+
+
+    .keypad button {
+        min-height: 51px;
+    }
+
+}
+
+
+/* =========================================================
+   CALCULATOR - LIGHT MODE
+========================================================= */
+
+body.light-mode .calculator-app {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f4f8fd
+        );
+
+    border-color: rgba(20, 50, 90, .12);
+
+    box-shadow:
+        0 20px 60px rgba(30, 60, 100, .12);
+}
+
+
+/* ================= HEADER ================= */
+
+body.light-mode .calculator-header {
+    background: rgba(255, 255, 255, .72);
+
+    border-bottom-color:
+        rgba(20, 50, 90, .10);
+}
+
+
+/* ================= DISPLAY ================= */
+
+body.light-mode .display {
+    background:
+        linear-gradient(
+            145deg,
+            #f8fbff,
+            #eef4fa
+        );
+
+    border-bottom-color:
+        rgba(20, 50, 90, .10);
+}
+
+
+/* ================= DISPLAY TEXT ================= */
+
+body.light-mode .expression {
+    color: #64748b;
+}
+
+body.light-mode .result {
+    color: #152238;
+}
+
+
+/* ================= STATUS BUTTONS ================= */
+
+body.light-mode .display-status button,
+body.light-mode .display-status span {
+    background: #f4f8fd;
+
+    color: #2563eb;
+
+    border-color:
+        rgba(37, 99, 235, .12);
+}
+
+
+/* ================= TABS ================= */
+
+body.light-mode .tabs {
+    background: #ffffff;
+
+    border-bottom-color:
+        rgba(20, 50, 90, .10);
+}
+
+body.light-mode .tab {
+    color: #64748b;
+}
+
+body.light-mode .tab.active {
+    color: #152238;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8bd8ff,
+            #4f8fff
+        );
+}
+
+
+/* ================= FUNCTION BUTTONS ================= */
+
+body.light-mode .function-grid button,
+body.light-mode .keypad button,
+body.light-mode .memory-buttons button,
+body.light-mode .matrix-buttons button,
+body.light-mode .base-buttons button {
+
+    color: #2563eb;
+
+    background: #f4f8fd;
+
+    border-color:
+        rgba(20, 50, 90, .10);
+
+    box-shadow:
+        0 4px 12px rgba(30, 60, 100, .05);
+}
+
+
+/* Hover */
+
+body.light-mode .function-grid button:hover,
+body.light-mode .keypad button:hover,
+body.light-mode .memory-buttons button:hover,
+body.light-mode .matrix-buttons button:hover,
+body.light-mode .base-buttons button:hover {
+
+    background: #eaf3fc;
+
+    border-color:
+        rgba(37, 99, 235, .22);
+}
+
+
+/* ================= INFO BOXES ================= */
+
+body.light-mode .info-box,
+body.light-mode .matrix-box,
+body.light-mode .base-output div {
+
+    background: #f4f8fd;
+
+    border-color:
+        rgba(20, 50, 90, .10);
+}
+
+
+/* ================= INPUTS ================= */
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+
+    color: #152238;
+
+    background: #ffffff;
+
+    border-color:
+        rgba(20, 50, 90, .14);
+}
+
+
+/* ================= FOOTER OF CALCULATOR ================= */
+
+body.light-mode .calculator-app footer {
+
+    color: #64748b;
+
+    background: rgba(255, 255, 255, .5);
+
+    border-top-color:
+        rgba(20, 50, 90, .10);
+}
+
+/* =========================================================
+   HISTORY - LIGHT MODE
+========================================================= */
+
+body.light-mode .history-panel {
+    background: rgba(255, 255, 255, .97);
+
+    border-left:
+        1px solid rgba(20, 50, 90, .12);
+
+    box-shadow:
+        -20px 0 60px rgba(30, 60, 100, .12);
+}
+
+
+/* هدر تاریخچه */
+
+body.light-mode .history-header {
+    background: rgba(255, 255, 255, .97);
+
+    border-bottom:
+        1px solid rgba(20, 50, 90, .10);
+}
+
+
+/* عنوان تاریخچه */
+
+body.light-mode .history-header h2 {
+    color: #152238;
+}
+
+
+/* دکمه پاک کردن */
+
+body.light-mode .history-header button {
+    color: #dc3545;
+
+    background:
+        rgba(220, 53, 69, .06);
+
+    border-color:
+        rgba(220, 53, 69, .14);
+}
+
+
+/* آیتم‌های تاریخچه */
+
+body.light-mode .history-item {
+    background:
+        #f4f8fd;
+
+    border-color:
+        rgba(20, 50, 90, .08);
+}
+
+
+/* حالت hover */
+
+body.light-mode .history-item:hover {
+    background:
+        #eaf3fc;
+
+    border-color:
+        rgba(86, 184, 255, .25);
+}
+
+
+/* عبارت محاسبه */
+
+body.light-mode .history-expression {
+    color: #64748b;
+}
+
+
+/* نتیجه */
+
+body.light-mode .history-result {
+    color: #2563eb;
+}
+
+
+/* وقتی تاریخچه خالی است */
+
+body.light-mode .empty-history {
+    color: #64748b;
+}
+
+body.light-mode .info-box h3 {
+    color: #1683e8;
+    font-weight: 700;
+}
+
+body.light-mode .info-box p {
+    color: #334155;
+}
+
+body.light-mode .info-box code {
+    color: #1683e8;
+    font-weight: 600;
+}
+

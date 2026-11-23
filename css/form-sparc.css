@@ -1,0 +1,1041 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Vazirmatn", sans-serif;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(48, 125, 255, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(47, 105, 210, 0.08),
+            transparent 30%
+        ),
+        #07111f;
+
+    color: #eaf0ff;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+.register-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.register-container {
+    width: 100%;
+    max-width: 1120px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.register-intro {
+    padding: 20px 0;
+}
+
+.intro-badge {
+    display: inline-flex;
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(79, 140, 255, 0.35);
+
+    border-radius: 50px;
+
+    background: rgba(31, 76, 145, 0.15);
+
+    color: #6ea8ff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+.register-intro h1 {
+    font-size: clamp(32px, 4vw, 50px);
+
+    line-height: 1.65;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.register-intro h1 span {
+    display: block;
+
+    color: #2f8cff;
+
+    text-shadow:
+        0 0 25px rgba(47, 140, 255, 0.22);
+}
+
+
+.register-intro > p {
+    color: #aab7d6;
+
+    font-size: 15px;
+
+    line-height: 2.1;
+
+    max-width: 480px;
+}
+
+
+/* ================================
+   LINE
+================================ */
+
+.intro-line {
+    width: 70px;
+    height: 3px;
+
+    background: #318bff;
+
+    border-radius: 10px;
+
+    margin: 30px 0;
+}
+
+
+/* ================================
+   INFO
+================================ */
+
+.intro-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.intro-info div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.intro-info p {
+    color: #c5d0e8;
+
+    font-size: 14px;
+}
+
+.info-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(47, 140, 255, 0.12);
+
+    border: 1px solid rgba(47, 140, 255, 0.3);
+
+    color: #48a0ff;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   FORM CARD
+================================ */
+
+.form-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 34, 57, 0.95),
+            rgba(10, 23, 40, 0.96)
+        );
+
+    border: 1px solid rgba(115, 145, 190, 0.14);
+
+    border-radius: 25px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+}
+
+
+/* نور ظریف گوشه کارت */
+
+.form-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -80px;
+
+    background: rgba(47, 140, 255, 0.12);
+
+    filter: blur(50px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* ================================
+   FORM HEADER
+================================ */
+
+.form-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(47, 140, 255, 0.12);
+
+    border: 1px solid rgba(47, 140, 255, 0.25);
+
+    color: #4a9cff;
+
+    font-size: 21px;
+}
+
+.form-header h2 {
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #8190ad;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   FORM GRID
+================================ */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* ================================
+   LABEL
+================================ */
+
+.form-group label {
+    color: #dce5f8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   INPUT + SELECT
+================================ */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 52px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(126, 151, 190, 0.17);
+
+    background: rgba(5, 15, 28, 0.65);
+
+    color: #edf3ff;
+
+    padding: 0 16px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #5e6d88;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #378eff;
+
+    background: rgba(8, 22, 39, 0.9);
+
+    box-shadow:
+        0 0 0 3px rgba(55, 142, 255, 0.08),
+        0 0 20px rgba(55, 142, 255, 0.06);
+}
+
+
+/* Select */
+
+.form-group select {
+    appearance: none;
+
+    cursor: pointer;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #7190b9 50%),
+        linear-gradient(135deg, #7190b9 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 20px) 22px,
+        calc(100% - 15px) 22px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+.form-group select option {
+    background: #0d1728;
+
+    color: #eaf0ff;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+    min-height: 15px;
+
+    color: #ff6b7a;
+
+    font-size: 11px;
+
+    padding-right: 3px;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.submit-btn {
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #438cff,
+        #2d6ff0
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(47, 113, 255, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 35px rgba(47, 113, 255, 0.35);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.arrow {
+    font-size: 20px;
+
+    transition: transform 0.2s ease;
+}
+
+.submit-btn:hover .arrow {
+    transform: translateX(-4px);
+}
+
+
+/* ================================
+   NOTE
+================================ */
+
+.form-note {
+    text-align: center;
+
+    color: #65748f;
+
+    font-size: 11px;
+
+    margin-top: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* ================================
+   SUCCESS
+================================ */
+
+.success-message {
+    display: none;
+
+    text-align: center;
+
+    padding: 25px 10px 10px;
+}
+
+.success-message.active {
+    display: block;
+}
+
+/* ================================
+   SUCCESS ICON ANIMATION
+================================ */
+
+.success-icon {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34, 211, 153, 0.08);
+
+    border: 1px solid rgba(34, 211, 153, 0.35);
+
+    color: #34d399;
+
+    font-size: 0;
+
+    position: relative;
+
+    animation: successCircle 0.5s ease-out forwards;
+
+    box-shadow:
+        0 0 0 rgba(34, 211, 153, 0);
+}
+
+
+/* خود تیک */
+
+.success-icon::after {
+    content: "";
+
+    width: 25px;
+    height: 13px;
+
+    position: absolute;
+
+    top: 30px;
+    left: 27px;
+
+    border-left: 3px solid #34d399;
+    border-bottom: 3px solid #34d399;
+
+    transform: rotate(-45deg) scale(0);
+
+    transform-origin: center;
+
+    animation: checkmark 0.45s ease-out 0.35s forwards;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(52, 211, 153, 0.5)
+        );
+}
+
+
+/* ================================
+   Circle Animation
+================================ */
+
+@keyframes successCircle {
+
+    0% {
+        transform: scale(0.65);
+
+        opacity: 0;
+
+        box-shadow:
+            0 0 0 rgba(34, 211, 153, 0);
+    }
+
+    70% {
+        transform: scale(1.08);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 28px rgba(34, 211, 153, 0.08);
+    }
+}
+
+
+/* ================================
+   Checkmark Animation
+================================ */
+
+@keyframes checkmark {
+
+    0% {
+        transform:
+            rotate(-45deg)
+            scale(0);
+    }
+
+    60% {
+        transform:
+            rotate(-45deg)
+            scale(1.15);
+    }
+
+    100% {
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+}
+
+.success-message h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    color: #8f9db7;
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    margin-bottom: 22px;
+}
+
+.success-message button {
+    background: transparent;
+
+    border: 1px solid rgba(79, 140, 255, 0.3);
+
+    color: #70a9ff;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.success-message button:hover {
+    background: rgba(79, 140, 255, 0.08);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .register-container {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        gap: 30px;
+    }
+
+    .register-intro {
+        text-align: center;
+    }
+
+    .register-intro > p {
+        margin: auto;
+    }
+
+    .intro-line {
+        margin: 25px auto;
+    }
+
+    .intro-info {
+        align-items: center;
+    }
+
+    .register-intro h1 span {
+        display: inline;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 35px 15px;
+    }
+
+    .form-card {
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+    .register-intro h1 {
+        font-size: 30px;
+
+        line-height: 1.6;
+    }
+
+    .register-intro > p {
+        font-size: 13px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-header {
+        margin-bottom: 24px;
+    }
+
+    .form-header h2 {
+        font-size: 19px;
+    }
+}
+
+/* ================================
+   SUCCESS PAGE BUTTONS
+================================ */
+
+.success-message {
+    text-align: center;
+}
+
+
+/* تمام لینک‌ها و دکمه‌های داخل پیام موفقیت */
+
+.success-message button,
+.success-message a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 54px;
+
+    padding: 0 28px;
+
+    border-radius: 12px;
+
+    font-family: "Vazirmatn", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* دکمه ثبت نام مجدد */
+
+.success-message button {
+    background: rgba(47, 140, 255, 0.08);
+
+    border: 1px solid rgba(79, 140, 255, 0.35);
+
+    color: #75adff;
+}
+
+
+/* لینک صفحه اصلی */
+
+.success-message a {
+    background: #438cff;
+
+    border: 1px solid #438cff;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(47, 113, 255, 0.18);
+}
+
+
+/* Hover دکمه ثبت نام مجدد */
+
+.success-message button:hover {
+    background: rgba(47, 140, 255, 0.15);
+
+    border-color: rgba(79, 140, 255, 0.55);
+
+    transform: translateY(-2px);
+}
+
+
+/* Hover صفحه اصلی */
+
+.success-message a:hover {
+    background: #347cf0;
+
+    border-color: #347cf0;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(47, 113, 255, 0.28);
+}
+
+
+/* جلوگیری از استایل‌های عمومی سایت */
+
+.success-message a:visited {
+    color: #ffffff;
+}
+
+.success-message a:active,
+.success-message button:active {
+    transform: translateY(0);
+}
+.success-actions {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 24px;
+}
+
+
+@media (max-width: 500px) {
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .success-message button,
+    .success-message a {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   LIGHT MODE - REGISTER FORM
+========================================= */
+
+body.light-mode .form-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f4f7fb
+        );
+
+    border-color: rgba(15, 23, 42, 0.10);
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* نور گوشه کارت */
+
+body.light-mode .form-card::before {
+    background: rgba(47, 140, 255, 0.08);
+}
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+body.light-mode .form-header h2 {
+    color: #0f172a;
+}
+
+body.light-mode .form-header p {
+    color: #64748b;
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+body.light-mode .form-group label {
+    color: #1e293b;
+}
+
+
+/* =========================================
+   INPUT + SELECT
+========================================= */
+
+body.light-mode .form-group input,
+body.light-mode .form-group select {
+    background: #f1f5f9;
+
+    color: #0f172a;
+
+    border-color: rgba(15, 23, 42, 0.10);
+}
+
+
+/* Placeholder */
+
+body.light-mode .form-group input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* Focus */
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group select:focus {
+    background: #ffffff;
+
+    border-color: #378eff;
+
+    box-shadow:
+        0 0 0 3px rgba(55, 142, 255, 0.10),
+        0 0 20px rgba(55, 142, 255, 0.06);
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+body.light-mode .form-group select {
+    background-color: #f1f5f9;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #64748b 50%
+        ),
+        linear-gradient(
+            135deg,
+            #64748b 50%,
+            transparent 50%
+        );
+}
+
+
+/* گزینه‌های Select */
+
+body.light-mode .form-group select option {
+    background: #ffffff;
+
+    color: #0f172a;
+}
+
+
+/* =========================================
+   PRIVACY NOTE
+========================================= */
+
+body.light-mode .form-note {
+    color: #64748b;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+body.light-mode .success-message h3 {
+    color: #0f172a;
+}
+
+body.light-mode .success-message p {
+    color: #64748b;
+}
+
+
+/* =========================================
+   SUCCESS BUTTON
+========================================= */
+
+body.light-mode .success-message button {
+    background: rgba(47, 140, 255, 0.06);
+
+    border-color: rgba(79, 140, 255, 0.35);
+
+    color: #2563eb;
+}
+
+body.light-mode .success-message button:hover {
+    background: rgba(47, 140, 255, 0.12);
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+body.light-mode .error-message {
+    color: #dc3545;
+}
