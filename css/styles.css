@@ -2034,3 +2034,65 @@ video,
 iframe {
     max-width: 100%;
 }
+
+/* =====================================
+   MOBILE HERO - SINGLE LINE FIX
+===================================== */
+
+@media (max-width: 600px) {
+
+    /* متن پرتال رسمی */
+    .hero-content .badge {
+        display: inline-block;
+
+        white-space: nowrap;
+
+        max-width: 100%;
+
+        font-size: clamp(9px, 2.8vw, 13px);
+
+        padding: 10px 12px;
+
+        line-height: 1.5;
+
+        box-sizing: border-box;
+    }
+
+
+    /* عنوان اصلی */
+    .hero-content h1.typing {
+        white-space: nowrap;
+
+        font-size: clamp(15px, 5vw, 24px) !important;
+
+        line-height: 1.5;
+
+        max-width: 100%;
+
+        letter-spacing: -0.5px;
+
+        margin: 18px 0;
+    }
+
+}
+/* =====================================
+   MAGAZINE TITLE - MOBILE FIX
+===================================== */
+
+@media (max-width: 600px) {
+
+    .magazine h2 {
+        font-size: clamp(20px, 5vw, 28px) !important;
+
+        white-space: nowrap;
+
+        max-width: 100%;
+
+        line-height: 1.5;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+}
