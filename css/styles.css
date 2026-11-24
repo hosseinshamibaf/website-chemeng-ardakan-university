@@ -2035,81 +2035,51 @@ iframe {
     max-width: 100%;
 }
 
+
+
 /* =====================================
-   MOBILE HERO - SINGLE LINE FIX
+   MOBILE TYPOGRAPHY FIX
 ===================================== */
 
 @media (max-width: 600px) {
 
     /* متن پرتال رسمی */
     .hero-content .badge {
-        display: inline-block;
-
-        white-space: nowrap;
-
+        display: block;
+        width: fit-content;
         max-width: 100%;
-
-        font-size: clamp(9px, 2.8vw, 13px);
-
-        padding: 10px 12px;
-
+        margin: 0 auto;
+        white-space: nowrap;
+        font-size: clamp(8px, 2.2vw, 11px);
+        padding: 9px 10px;
         line-height: 1.5;
-
         box-sizing: border-box;
+        text-align: center;
     }
 
-
-    /* عنوان اصلی */
+    /* عنوان اصلی صفحه */
     .hero-content h1.typing {
-        white-space: nowrap;
-
-        font-size: clamp(15px, 5vw, 24px) !important;
-
-        line-height: 1.5;
-
+        display: block;
+        width: 100%;
         max-width: 100%;
-
-        letter-spacing: -0.5px;
-
+        white-space: nowrap !important;
+        font-size: clamp(12px, 4vw, 19px) !important;
+        line-height: 1.4;
+        letter-spacing: -0.7px;
+        text-align: center;
         margin: 18px 0;
     }
 
-}
-/* =====================================
-   MAGAZINE TITLE - MOBILE FIX
-===================================== */
-
-@media (max-width: 600px) {
-
+    /* عنوان نشریه */
     .magazine h2 {
-        font-size: clamp(20px, 5vw, 28px) !important;
-
-        white-space: nowrap;
-
+        width: 100%;
         max-width: 100%;
-
-        line-height: 1.5;
-
+        white-space: nowrap !important;
+        font-size: clamp(15px, 4.5vw, 23px) !important;
+        line-height: 1.4;
+        letter-spacing: -0.5px;
         text-align: center;
-
         box-sizing: border-box;
-    }
-
-}
-@media screen and (max-width: 768px) {
-
-    #magazine h2 {
-        color: red !important;
-        font-size: 20px !important;
-    }
-
-    .hero-content .badge {
-        background: red !important;
-    }
-
-    .hero-content h1 {
-        color: lime !important;
-        font-size: 20px !important;
     }
 
 }
