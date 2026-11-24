@@ -2048,9 +2048,8 @@ iframe {
         display: block;
         width: fit-content;
         max-width: 100%;
-        margin: 0 auto;
         white-space: nowrap;
-        font-size: clamp(8px, 2.2vw, 11px);
+        font-size:8px;
         padding: 9px 10px;
         line-height: 1.5;
         box-sizing: border-box;
@@ -2063,10 +2062,10 @@ iframe {
         width: 100%;
         max-width: 100%;
         white-space: nowrap !important;
-        font-size: clamp(12px, 4vw, 19px) !important;
+        font-size: 35px !important;
         line-height: 1.4;
         letter-spacing: -0.7px;
-        text-align: center;
+        text-align:right;
         margin: 18px 0;
     }
 
@@ -2075,10 +2074,9 @@ iframe {
         width: 100%;
         max-width: 100%;
         white-space: nowrap !important;
-        font-size: clamp(15px, 4.5vw, 23px) !important;
+        font-size:35px!important;
         line-height: 1.4;
         letter-spacing: -0.5px;
-        text-align: center;
         box-sizing: border-box;
     }
 
