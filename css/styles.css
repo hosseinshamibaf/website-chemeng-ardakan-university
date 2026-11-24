@@ -2074,5 +2074,15 @@ iframe {
         letter-spacing: -0.5px;
         box-sizing: border-box;
     }
-
+    .section-tag {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        white-space: nowrap;
+        font-size:8px;
+        padding: 9px 10px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
