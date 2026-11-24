@@ -128,7 +128,7 @@ visual.addEventListener("mouseleave", () => {
 ========================================= */
 
 // تاریخ رونمایی
-const launchDate = new Date("2026-12-01T00:00:00").getTime();
+const launchDate = new Date("2026-12-25T00:00:00").getTime();
 
 const daysElement = document.getElementById("days");
 const hoursElement = document.getElementById("hours");

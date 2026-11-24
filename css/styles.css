@@ -1,4 +1,20 @@
+/* Local Fonts */
 
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../fonts/vazirmatn.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bahman';
+    src: url('../fonts/bahman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 .menu-toggle span {
   width: 18px;
   height: 2px;
@@ -1984,4 +2000,37 @@ html.light-mode::-webkit-scrollbar-thumb:hover {
 
 html.light-mode::-webkit-scrollbar-button {
     background: #ffffff;
+}
+
+/* Responsive Google Maps */
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
 }

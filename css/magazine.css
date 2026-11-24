@@ -590,15 +590,27 @@
     object-position: center;
 }
 
+
+
 @media (max-width: 600px) {
 
     .archive-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        justify-items: center;
         gap: 14px;
     }
 
+    .archive-grid .issue-card {
+        width: 100%;
+        max-width: 340px;
+        box-sizing: border-box;
+    }
+
     .archive-grid .issue-cover {
-        aspect-ratio: 2 / 3;
+        width: 100%;
+        height: 436px;
+        aspect-ratio: auto;
     }
 
 }
+
