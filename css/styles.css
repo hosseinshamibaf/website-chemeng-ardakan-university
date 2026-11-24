@@ -2096,3 +2096,20 @@ iframe {
     }
 
 }
+@media screen and (max-width: 768px) {
+
+    #magazine h2 {
+        color: red !important;
+        font-size: 20px !important;
+    }
+
+    .hero-content .badge {
+        background: red !important;
+    }
+
+    .hero-content h1 {
+        color: lime !important;
+        font-size: 20px !important;
+    }
+
+}
