@@ -2060,11 +2060,7 @@ iframe {
     .hero-content h1.typing {
         display: block;
         width: 100%;
-        max-width: 100%;
-        white-space: nowrap !important;
         font-size: 30px !important;
-        line-height: 1.4;
-        letter-spacing: -0.7px;
         text-align:right;
     }
 
