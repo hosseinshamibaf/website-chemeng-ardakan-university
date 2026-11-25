@@ -1062,7 +1062,7 @@ body.light-mode .element-item.active:hover {
       font-size:25px;
 
       line-height: 1.5;
-      text-align: center;
+      text-align: right;
       white-space: nowrap;
 
       box-sizing: border-box;
