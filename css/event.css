@@ -237,18 +237,19 @@ body.light-mode .btn-enroll-1 {
 
     /* عنوان اصلی صفحه */
     .page-hero h1 {
-      display: block;
-      width: 100%;
-      font-size: 29px;
-      text-align: right;
-      white-space: nowrap;
+        width: 100%;
+        max-width: 100%;
+        font-size: 29px;
+        white-space: nowrap;
+        text-align: right;
+        line-height: 1.8;
     }
 
     /* توضیحات زیر عنوان */
     .page-hero p {
         font-size: 12px;
         line-height: 1.9;
-        text-align: center;
+        text-align: right;
     }
 
 }
