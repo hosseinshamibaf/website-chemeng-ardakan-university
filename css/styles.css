@@ -2041,49 +2041,29 @@ iframe {
    MOBILE TYPOGRAPHY FIX
 ===================================== */
 
-@media (max-width: 600px) {
-
-  /* متن پرتال رسمی */
-  .hero-content .badge {
-    display: block;
-    width: fit-content;
-    max-width: 100%;
-    white-space: nowrap;
-    font-size:8px;
-    padding: 9px 10px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  /* عنوان اصلی صفحه */
-  .hero-content h1.typing {
-      display: block;
-      width: 100%;
-      font-size: 29px;
-      text-align: right;
-      white-space: nowrap;
-  }
-
-  /* عنوان نشریه */
-  .magazine h2 {
+/* عنوان نشریه */
+.magazine h2 {
     width: 100%;
     max-width: 100%;
     white-space: nowrap !important;
-    font-size:35px!important;
+    font-size: 35px !important;
     line-height: 1.4;
     letter-spacing: -0.5px;
     box-sizing: border-box;
-  }
-  .magazine.section-tag {
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      white-space: nowrap;
-      font-size:8px;
-      padding: 9px 10px;
-      line-height: 1.5;
-      box-sizing: border-box;
-      text-align: center;
-  }
+}
+
+/* کادر نشریه */
+@media (max-width: 600px) {
+    .magazine .section-tag,
+    .magazine.section-tag {
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        white-space: nowrap !important;
+        font-size: 8px !important;
+        padding: 9px 10px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
