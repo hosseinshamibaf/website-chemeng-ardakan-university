@@ -239,7 +239,7 @@ body.light-mode .btn-enroll-1 {
     .page-hero h1 {
         width: 100%;
         max-width: 100%;
-        font-size: clamp(15px, 4.5vw, 21px);
+        font-size: clamp(25px, 4.5vw, 21px);
         white-space: nowrap;
         text-align: center;
         line-height: 1.8;
