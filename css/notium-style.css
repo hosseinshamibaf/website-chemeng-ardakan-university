@@ -1054,12 +1054,11 @@ body.light-mode .element-item.active:hover {
 
     /* عنوان اصلی صفحه */
     .hero__content h1 {
-        width: 100%;
-        max-width: 100%;
-        font-size: 20px;
-        white-space: nowrap;
-        text-align: right;
-        line-height: 1.8;
+      display: block;
+      width: 100%;
+      font-size: 29px;
+      text-align: right;
+      white-space: nowrap;
     }
 
 }
