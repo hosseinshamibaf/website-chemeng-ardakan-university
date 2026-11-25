@@ -1051,4 +1051,22 @@ body.light-mode .element-item.active:hover {
     width: auto !important;
     font-size: inherit !important;
   }
+
+    .section-header h2 {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    font-size:25px !important;
+
+    text-align: right !important;
+
+    white-space: nowrap !important;
+
+    line-height: 1.7 !important;
+
+    box-sizing: border-box;
+  }
 }
