@@ -244,6 +244,7 @@ body.light-mode .btn-enroll-1 {
         text-align: right;
         line-height: 1.8;
         margin-bottom: 15px;
+        max-width: 100%;
     }
 
     /* توضیحات زیر عنوان */
