@@ -1,24 +1,5 @@
 
 /* =========================================
-   FONTS
-========================================= */
-
-@font-face {
-    font-family: "Bahman";
-    src: url("fonts/Bahman.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Vazir";
-    src: url("fonts/Vazir.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* =========================================
    RESET
 ========================================= */
 
@@ -1051,6 +1032,7 @@ h1 span {
 
 }
 
-.main-title{
-    font-family: Bahman;
+.content h1 {
+    font-family: "Bahman", sans-serif !important;
+    font-weight: normal !important;
 }
