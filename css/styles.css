@@ -2041,29 +2041,45 @@ iframe {
    MOBILE TYPOGRAPHY FIX
 ===================================== */
 
-/* عنوان نشریه */
-.magazine h2 {
-    width: 100%;
-    max-width: 100%;
-    white-space: nowrap !important;
-    font-size: 35px !important;
-    line-height: 1.4;
-    letter-spacing: -0.5px;
-    box-sizing: border-box;
-}
-
-/* کادر نشریه */
 @media (max-width: 600px) {
-    .magazine .section-tag,
-    .magazine.section-tag {
-        display: block;
-        width: fit-content;
-        max-width: 100%;
-        white-space: nowrap !important;
-        font-size: 8px !important;
-        padding: 9px 10px;
-        line-height: 1.5;
-        box-sizing: border-box;
-        text-align: center;
-    }
+
+  /* متن پرتال رسمی */
+  .hero-content .badge {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap;
+    font-size:8px;
+    padding: 9px 10px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* عنوان اصلی صفحه */
+  .hero-content h1.typing {
+      display: block;
+      width: 100%;
+      font-size: 29px;
+      text-align: right;
+      white-space: nowrap;
+  }
+
+  /* کادر معرفی نشریه */
+  #magazine .magazine .section-tag {
+      display: inline-block !important;
+      width: auto !important;
+      max-width: 100% !important;
+      white-space: nowrap !important;
+      font-size: 8px !important;
+      padding: 9px 8px !important;
+      line-height: 1.5;
+      box-sizing: border-box;
+  }
+
+  /* عنوان اصلی نشریه */
+  #magazine .magazine h2 {
+      font-size: 25px !important;
+      white-space: nowrap;
+  }
 }
