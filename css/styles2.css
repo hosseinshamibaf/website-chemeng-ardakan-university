@@ -231,3 +231,22 @@ body{
     }
 
 }
+
+@media (max-width: 600px) {
+
+    .about-content .about-main-title {
+        width: 100%;
+        max-width: 100%;
+        font-size: 25px !important;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    .about-content .about-main-title .title-line,
+    .about-content .about-main-title .highlight {
+        display: block !important;
+        white-space: nowrap !important;
+        font-size: clamp(19px, 5.5vw, 25px) !important;
+    }
+
+}
