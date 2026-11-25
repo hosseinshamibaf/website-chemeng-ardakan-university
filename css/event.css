@@ -219,3 +219,28 @@ body.light-mode .btn-enroll-1 {
   color: #fff !important;
 }
 
+@media (max-width: 600px) {
+
+    /* کادر بالایی */
+    .page-hero .hero-badge {
+        display: inline-block;
+        width: max-content;
+        max-width: 100%;
+        white-space: nowrap;
+        font-size: 9px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+    }
+
+    /* عنوان اصلی */
+    .page-hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px !important;
+        white-space: nowrap;
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+}
