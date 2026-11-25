@@ -1059,21 +1059,19 @@ body.light-mode .element-item.active:hover {
       max-width: 100%;
       min-width: 0;
 
-      font-size: 25px !important;
-      line-height: 1.5;
+      font-size: clamp(20px, 5.5vw, 32px) !important;
 
-      text-align: right;
-      white-space: normal;
+      line-height: 1.5;
+      text-align: center;
+      white-space: nowrap;
 
       box-sizing: border-box;
   }
 
-  /* نمایش کلمه نوتیوم کنار ادامه عنوان */
   .hero__content h1 b {
       display: inline !important;
       width: auto !important;
-      max-width: none !important;
-      min-width: auto !important;
-      font-size: inherit;
+      font-size: inherit !important;
   }
+
 }
