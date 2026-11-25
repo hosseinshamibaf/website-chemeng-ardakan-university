@@ -2057,12 +2057,13 @@ iframe {
     }
 
     /* عنوان اصلی صفحه */
-    .hero-content h1.typing {
-        display: block;
-        width: 100%;
-        font-size: 29px !important;
-        text-align:right;
-    }
+  .hero-content h1.typing {
+      display: block;
+      width: 100%;
+      font-size: 29px;
+      text-align: right;
+      white-space: nowrap;
+  }
 
     /* عنوان نشریه */
     .magazine h2 {
