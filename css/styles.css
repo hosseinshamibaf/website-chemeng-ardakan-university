@@ -2068,8 +2068,6 @@ iframe {
   /* کادر معرفی نشریه */
   #magazine .magazine .section-tag {
       display: inline-block !important;
-      width: auto !important;
-      max-width: 100% !important;
       white-space: nowrap !important;
       font-size: 8px !important;
       padding: 9px 8px !important;
