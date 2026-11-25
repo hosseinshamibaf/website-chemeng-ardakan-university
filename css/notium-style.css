@@ -1053,14 +1053,6 @@ body.light-mode .element-item.active:hover {
   }
 
   /* عنوان اصلی صفحه */
-  .hero__content {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
-      overflow: hidden !important;
-  }
-
   .hero__content h1,
   .hero__content h1 * {
       display: block !important;
