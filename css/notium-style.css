@@ -1053,22 +1053,27 @@ body.light-mode .element-item.active:hover {
   }
 
   /* عنوان اصلی صفحه */
-  .hero__content h1,
-  .hero__content h1 * {
-      display: block !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
+  .hero__content h1 {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
 
-      white-space: normal !important;
-      overflow-wrap: anywhere !important;
-      word-break: normal !important;
+      font-size: 20px !important;
+      line-height: 1.5;
 
-      font-size:20px  !important;
-      line-height: 1.5 !important;
+      text-align: right;
+      white-space: normal;
 
-      box-sizing: border-box !important;
+      box-sizing: border-box;
   }
 
-
+  /* نمایش کلمه نوتیوم کنار ادامه عنوان */
+  .hero__content h1 b {
+      display: inline !important;
+      width: auto !important;
+      max-width: none !important;
+      min-width: auto !important;
+      font-size: inherit;
+  }
 }
