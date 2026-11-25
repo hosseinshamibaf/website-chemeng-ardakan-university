@@ -219,28 +219,38 @@ body.light-mode .btn-enroll-1 {
   color: #fff !important;
 }
 
-@media (max-width: 600px) {
+/* اصلاح نمایش عنوان صفحه در موبایل */
+@media screen and (max-width: 600px) {
 
-    /* کادر بالایی */
+    /* کادر فعالیت‌ها و رویدادها */
     .page-hero .hero-badge {
         display: inline-block;
-        width: max-content;
+        width: fit-content;
         max-width: 100%;
         white-space: nowrap;
-        font-size: 9px;
-        padding: 8px 10px;
+        font-size: clamp(7px, 2.3vw, 10px);
+        padding: 8px 9px;
+        line-height: 1.6;
         box-sizing: border-box;
+        margin-bottom: 18px;
     }
 
-    /* عنوان اصلی */
+    /* عنوان اصلی صفحه */
     .page-hero h1 {
         width: 100%;
         max-width: 100%;
-        font-size: 15px !important;
+        font-size: clamp(15px, 4.5vw, 21px);
         white-space: nowrap;
         text-align: center;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    /* توضیحات زیر عنوان */
+    .page-hero p {
+        font-size: 12px;
+        line-height: 1.9;
+        text-align: center;
     }
 
 }
