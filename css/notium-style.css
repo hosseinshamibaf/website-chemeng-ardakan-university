@@ -1035,7 +1035,7 @@ body.light-mode .element-item.active:hover {
     max-width: 100% !important;
     min-width: 0 !important;
 
-    font-size: clamp(25px, 5.8vw, 30px) !important;
+    font-size:25px !important;
 
     text-align: right !important;
 
