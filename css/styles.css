@@ -2075,9 +2075,12 @@ iframe {
         letter-spacing: -0.5px;
         box-sizing: border-box;
     }
-    .magazine.section-tag {
-        white-space: nowrap;
-        font-size: 12px;
-        padding: 10px 14px;
-    }
+  .magazine.section-tag {
+      font-size: 12px;
+      box-sizing: border-box;
+      text-align: center;
+      white-space: nowrap;
+      width: max-content;
+      max-width: 100%;
+  }
 }
