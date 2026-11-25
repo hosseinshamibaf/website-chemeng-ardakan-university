@@ -1064,7 +1064,7 @@ body.light-mode .element-item.active:hover {
       overflow-wrap: anywhere !important;
       word-break: normal !important;
 
-      font-size: clamp(20px, 5vw, 29px) !important;
+      font-size:30px  !important;
       line-height: 1.5 !important;
 
       box-sizing: border-box !important;
