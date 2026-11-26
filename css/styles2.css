@@ -250,3 +250,29 @@ body{
     }
 
 }
+/* عنوان صفحه درباره ما */
+
+.about-content .about-main-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+
+    width: 100%;
+    text-align: right !important;
+    line-height: 1.7;
+}
+
+.about-content .about-main-title .title-line,
+.about-content .about-main-title .highlight {
+    display: block !important;
+    width: 100%;
+    text-align: right !important;
+}
+
+.about-content .about-main-title .title-line {
+    color: var(--text);
+}
+
+.about-content .about-main-title .highlight {
+    color: var(--primary);
+}
