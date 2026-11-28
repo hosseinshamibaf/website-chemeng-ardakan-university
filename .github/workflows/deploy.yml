@@ -19,14 +19,15 @@ jobs:
       - name: Deploy website via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ ftp.chemeng-ard.ir }}
-          username: ${{ github@chemeng-ard.ir }}
-          password: ${{ 57579494rr@RR }}
-          server-dir: ${{ home/chemenga/public_html }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          server-dir: ./
           local-dir: ./
           dry-run: true
+
           exclude: |
             **/.git*
             **/.git*/**
