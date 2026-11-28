@@ -16,7 +16,7 @@ jobs:
       - name: Get repository files
         uses: actions/checkout@v4
 
-      - name: Deploy website via FTP
+      - name: Deploy website via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -27,7 +27,6 @@ jobs:
           server-dir: ./
           local-dir: ./
           dry-run: true
-
           exclude: |
             **/.git*
             **/.git*/**
